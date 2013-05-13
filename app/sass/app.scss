@@ -49,8 +49,44 @@
 @import "fonts";
 $orange: #eba136;
 $green: #E6F5B5;
+$gray: #ddd;
 
-.example-panel {
+.example-alert {
   @include alert-base;
-  @include alert-style($green);
+  @include alert-style(white);
+  border: 1px solid $gray;
+  font-weight: normal;
+  margin-bottom: 0;
+
+  &:before {
+    content: "examples";
+    display: block;
+    position: absolute;
+    top: emCalc(4px);
+    right: emCalc(8px);
+    color: $gray;
+    font-variant: small-caps;
+  }
+
+  .square {
+    list-style-position: inside;
+    margin-bottom: 0;
+  }
 }
+
+.grammar-panel {
+  font-weight: normal;
+  font-size: emCalc(14px);
+  line-height: 1.5;
+  padding: emCalc(8px);
+
+}
+
+blockquote {
+  border-left: 1px solid $gray;
+  padding: emCalc(5px) 0;
+  padding-left: emCalc(12px);
+  font-size: emCalc(14px);
+  line-height: 1.5;
+}
+

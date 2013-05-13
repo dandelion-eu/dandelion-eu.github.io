@@ -127,30 +127,61 @@
             <div class="api-section row column">
                 <h3 id="parameters">Parameters</h3>
 
-                <div class="large-2 columns"><h5>$select</h5></div>
-                <div class="large-10 columns offset-1">
-                    <div class="row">
-                        <div class="large-12 columns">
-
-                        <!--</div>-->
-                        <!--<div class="large-8 columns">-->
-                            <pre class="panel">[DISTINCT] {field} [AS "string"] | {function}([DISTINCT] {field} | {value}, ...) [AS "string"], ...</pre>
-                            <p>
-                                Only shows the specified column, or list of columns separated by comma. Distinct or <a href="#">field functions</a> can be used. It is also possible to rename columns with the AS keyword.
-                            </p>
+                <div class="row">
+                    <div class="large-2 columns"><h5 class="monospaced">$select</h5></div>
+                    <div class="large-10 columns offset-1">
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <pre class="panel grammar-panel">[DISTINCT] {field} [AS "string"] | {function}([DISTINCT] {field} | {value}, ...) [AS "string"], ...</pre>
+                                <p>
+                                    Only shows the specified column, or list of columns separated by comma. Distinct or <a href="#">field functions</a> can be used. It is also possible to rename columns with the AS keyword.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <div class="example-alert">
+                                    <ul class="square">
+                                        <li>
+                                            <a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?$select=name,%20category</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <p class="example-panel">
-                                <a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?$select=name,%20category</a>
-                            </p>
-
-                        </div>
-                    </div>
-
                 </div>
+                <hr/>
+                <div class="row">
+                    <div class="large-2 columns"><h5 class="monospaced">$where</h5></div>
+                    <div class="large-10 columns offset-1">
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <pre class="panel grammar-panel">{field} {binary_op} {value} | {field} {binary_op} {field} | {function}([{param1}, {param2}, ...])</pre>
+                                <p>
+                                    This allows to filter results on one or more columns in a SQL-like language. Allowed operators are &lt; (less than), > (more than), = (equals), != (not equals), =< (equals or less than), => (equals or more than). Filter conditions can be chained with AND and OR operators or negated using NOT. You can use also some <a href="#">filter functions</a>.
+                                </p>
+                                <blockquote>
+                                    The special columns "category" in EuroGeo and POI datasets: they contain the label of the category assigned to each event or location, according to a <a href="">taxonomy/classification</a> is inspired by Geonames, Schema.org and other sources.
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <div class="example-alert">
 
+                                    <!--<strong>Examples:</strong>-->
+                                    <ul class="square">
+                                        <li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?$select=name,%20category</a></li>
+                                    </ul>
+                                </div>
+                                <!--<p class="example-alert">-->
+                                    <!--<a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?$select=name,%20category</a>-->
+                                <!--</p>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
 
