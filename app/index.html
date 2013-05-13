@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Foundation 4</title>
+
+  
+  <link rel="stylesheet" href="styles/app.css" />
+  <script src="scripts/vendor/custom.modernizr.js"></script>
+
+</head>
+<body>
+
+    <!-- header -->
+    <nav class="top-bar">
+        <ul class="title-area">
+            <!-- Title Area -->
+            <li class="name">
+                <h1>
+                    <a href="#">
+                        Dandelion API Documentation
+                    </a>
+                </h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+                <li class="divider"></li>
+                <li class="has-dropdown">
+                    <a href="#">Main Item 1</a>
+                    <ul class="dropdown">
+                        <li><label>Section Name</label></li>
+                        <li class="has-dropdown">
+                            <a href="#" class="">Has Dropdown, Level 1</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Dropdown Options</a></li>
+                                <li><a href="#">Dropdown Options</a></li>
+                                <li><a href="#">Level 2</a></li>
+                                <li><a href="#">Subdropdown Option</a></li>
+                                <li><a href="#">Subdropdown Option</a></li>
+                                <li><a href="#">Subdropdown Option</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Dropdown Option</a></li>
+                        <li><a href="#">Dropdown Option</a></li>
+                        <li class="divider"></li>
+                        <li><label>Section Name</label></li>
+                        <li><a href="#">Dropdown Option</a></li>
+                        <li><a href="#">Dropdown Option</a></li>
+                        <li><a href="#">Dropdown Option</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">See all &rarr;</a></li>
+                    </ul>
+                </li>
+                <li class="divider"></li>
+                <li><a href="#">Main Item 2</a></li>
+                <li class="divider"></li>
+                <li class="has-dropdown">
+                    <a href="#">Main Item 3</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Dropdown Option</a></li>
+                        <li><a href="#">Dropdown Option</a></li>
+                        <li><a href="#">Dropdown Option</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">See all &rarr;</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </nav>
+    <!-- end header -->
+
+
+    <div class="row">
+
+        <!-- Main Content Section -->
+        <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+        <div class="large-10 push-2 columns">
+            <h1> Dandelion API v1.0</h1>
+            <h2>Read API</h2>
+
+            <p>
+                The data can be queried programmatically through our API. Feel free to experiment the current features and report your user experience through our <a data-uv-forum-id="197822" data-uv-lightbox="classic_widget" data-uv-link-color="#007dbf" data-uv-mode="feedback" data-uv-primary-color="#262320" href="javascript:void(0)">Feedback system</a>.
+                The awesome <a href="http://dev.socrata.com/consumers/getting-started">Socrata API</a> has been inspiring our design, so that there's an almost total compatibility between the two.
+                Stay tuned - more functionality is on its way!
+            </p>
+
+            <div class="api-section row columns">
+                <div class="large-12">
+                    <h3 id="api-endpoint">API endpoint</h3>
+                    <!--<pre class="prettyprint">/api/v1/datagem/{datagemID}/data.{output format}</pre>-->
+                    <pre class="panel">/api/v1/datagem/{datagemId|datagemSlug}/data.{outputFormat}</pre>
+                    <p>You can obtain the datagem ID by clicking on the "Get API" button on the datagem page.</p>
+                </div>
+            </div>
+
+            <div class="api-section row columns">
+                <div class="large-12">
+                    <h3 id="output-format">Output format</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <!--<th width="200">Format</th>-->
+                                <th>Format</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>json</td>
+                                <td>an array that contains N members according to the number of results retrieved by the query. The number of results is available as a X-DL-Count header in the response. Each member is a JSON object containing all key-values pairs corresponding to all columns present in the datagem.</td>
+                            </tr>
+                            <tr>
+                                <td>api</td>
+                                <td>pretty interface for using the API, the full response, comprehensive of headers, is displayed in a dedicated styled page.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="api-section row columns">
+                <div class="large-2">select</div>
+                <div class="large-10">
+                    <div class="row">
+                        <div class="large-4">bla bla</div>
+                        <div class="large-8">grammtica</div>
+                    </div>
+                    <div class="row">
+                        <div class="large-12">esempio</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            </div>
+
+
+        <!-- Nav Sidebar -->
+        <!-- This is source ordered to be pulled to the left on larger screens -->
+        <div class="large-2 pull-10 columns">
+            <p><img src="http://placehold.it/320x240&text=Ad" /></p>
+            <ul class="side-nav">
+                <li><a href="#">Endpoint</a></li>
+                <li><a href="#">Output format</a></li>
+                <li><a href="#">Parameters</a></li>
+                <li><a href="#">Composites</a></li>
+                <li><a href="#">Field functions</a></li>
+                <li><a href="#">Function functions</a></li>
+                <li><a href="#">Limits</a></li>
+                <li><a href="#">Response code</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer class="row">
+        <div class="large-12 columns">
+            <hr />
+            <div class="row">
+                <div class="large-6 columns">
+                    <p>&copy; Copyright no one at all. Go to town.</p>
+                </div>
+                <div class="large-6 columns">
+                    <ul class="inline-list right">
+                        <li><a href="#">Section 1</a></li>
+                        <li><a href="#">Section 2</a></li>
+                        <li><a href="#">Section 3</a></li>
+                        <li><a href="#">Section 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+  <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'scripts/vendor/zepto' : 'scripts/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+  
+  <script src="scripts/foundation/foundation.js"></script>
+	
+	<script src="scripts/foundation/foundation.alerts.js"></script>
+	
+	<script src="scripts/foundation/foundation.clearing.js"></script>
+	
+	<script src="scripts/foundation/foundation.cookie.js"></script>
+	
+	<script src="scripts/foundation/foundation.dropdown.js"></script>
+	
+	<script src="scripts/foundation/foundation.forms.js"></script>
+	
+	<script src="scripts/foundation/foundation.joyride.js"></script>
+	
+	<script src="scripts/foundation/foundation.magellan.js"></script>
+	
+	<script src="scripts/foundation/foundation.orbit.js"></script>
+	
+	<script src="scripts/foundation/foundation.placeholder.js"></script>
+	
+	<script src="scripts/foundation/foundation.reveal.js"></script>
+	
+	<script src="scripts/foundation/foundation.section.js"></script>
+	
+	<script src="scripts/foundation/foundation.tooltips.js"></script>
+	
+	<script src="scripts/foundation/foundation.topbar.js"></script>
+	
+  
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+</html>
