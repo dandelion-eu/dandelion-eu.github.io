@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>dandelion docs</title>
 
+    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/app.css" />
     <script src="scripts/vendor/custom.modernizr.js"></script>
 </head>
@@ -153,8 +154,46 @@
 
             </div>
 
-            </div>
 
+        <div class="api-section row columns">
+            <div class="large-12">
+                <h3 id="field-functions">Field functions</h3>
+                <blockquote>Note that field functions produce new columns with their result. The column name is arbitrary set by the API but it is possible to set a custom name by using the "AS" keyword.</blockquote>
+                <table>
+                    <thead>
+                    <tr>
+                        <!--<th width="200">Format</th>-->
+                        <th>Field functions</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="monospaced">count([column])</td>
+                        <td>Aggregation function for counting (similar to <span class="monospaced">SQL COUNT()</span>). If no parameter is specified the operation is performed on all columns. It is possible to use <span class="monospaced">DISTINCT</span> to consider only different elements.</td>
+                    </tr>
+                    <tr>
+                        <td class="monospaced">sum(column)</td>
+                        <td>Aggregation function for summing (similar to <span class="monospaced">SQL SUM()</span>). It is possible to use <span class="monospaced">DISTINCT</span> to sum only distinct values. <em>Note: it works only for numeric values.</em></td>
+                    </tr>
+                    <tr>
+                        <td class="monospaced">avg(column)</td>
+                        <td>Aggregation function for calculating the average value (similar to <span class="monospaced">SQL AVG()</span>). It is possible to use <span class="monospaced">DISTINCT</span> to consider only distinct values. <em>Note: it works only for numeric values.</em></td>
+                    </tr>
+                    <tr>
+                        <td class="monospaced">min(column)</td>
+                        <td>Aggregation function for extracting the minimum value (similar to <span class="monospaced">SQL MIN()</span>).</td>
+                    </tr>
+                    <tr>
+                        <td class="monospaced">max(column)</td>
+                        <td>Aggregation function for extracting the maximum value (similar to <span class="monospaced">SQL MAX()</span>).</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        </div>
 
         <!-- Nav Sidebar -->
         <!-- This is source ordered to be pulled to the left on larger screens -->
