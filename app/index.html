@@ -123,15 +123,30 @@
                 </div>
             </div>
 
-            <div class="api-section row columns">
-                <div class="large-2">select</div>
-                <div class="large-10">
+            <div class="api-section row column">
+                <h3 id="parameters">Parameters</h3>
+
+                <div class="large-1 columns"><p>$select</p></div>
+                <div class="large-11 columns offset-1">
                     <div class="row">
-                        <div class="large-4">bla bla</div>
-                        <div class="large-8">grammtica</div>
+                        <div class="large-12 columns">
+                            <p>
+                                Only shows the specified column, or list of columns separated by comma. Distinct or <a href="#">field functions</a> can be used. It is also possible to rename columns with the AS keyword.
+                            </p>
+                        <!--</div>-->
+                        <!--<div class="large-8 columns">-->
+                            <pre class="panel">$select=[DISTINCT] {field} [AS "string"]
+      | {function}([DISTINCT] {field} | {value}, ...)
+        [AS "string"], ...</pre>
+                        </div>
                     </div>
                     <div class="row">
-                        <div class="large-12">esempio</div>
+                        <div class="large-12 columns">
+                            <p class="panel">
+                                <a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">data.api?$select=name,%20category</a>
+                            </p>
+
+                        </div>
                     </div>
 
                 </div>
