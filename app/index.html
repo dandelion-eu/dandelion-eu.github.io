@@ -105,19 +105,18 @@
                     <table>
                         <thead>
                             <tr>
-                                <!--<th width="200">Format</th>-->
                                 <th>Format</th>
                                 <th>Description</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>json</td>
-                                <td>an array that contains N members according to the number of results retrieved by the query. The number of results is available as a X-DL-Count header in the response. Each member is a JSON object containing all key-values pairs corresponding to all columns present in the datagem.</td>
+                                <td class="monospaced">json</td>
+                                <td>An array that contains N members according to the number of results retrieved by the query. The number of results is available as a <span class="monospaced">X-DL-Count</span> header in the response. Each member is a <span class="monospaced">JSON</span> object containing all key-values pairs corresponding to all columns present in the datagem</td>
                             </tr>
                             <tr>
-                                <td>api</td>
-                                <td>pretty interface for using the API, the full response, comprehensive of headers, is displayed in a dedicated styled page.</td>
+                                <td class="monospaced">api</td>
+                                <td>Pretty interface for using the API, the full response, comprehensive of headers, is displayed in a dedicated styled page</td>
                             </tr>
                         </tbody>
                     </table>
@@ -134,7 +133,7 @@
                             <div class="large-12 columns">
                                 <pre class="panel grammar-panel">[DISTINCT] {field} [AS "string"] | {function}([DISTINCT] {field} | {value}, ...) [AS "string"], ...</pre>
                                 <p>
-                                    Only shows the specified column, or list of columns separated by comma. Distinct or <a href="#">field functions</a> can be used. It is also possible to rename columns with the AS keyword.
+                                    Only shows the specified column, or list of columns separated by comma. Distinct or <a href="#">field functions</a> can be used. It is also possible to rename columns with the <span class="monospaced">AS</span> keyword.
                                 </p>
                             </div>
                         </div>
@@ -159,10 +158,10 @@
                             <div class="large-12 columns">
                                 <pre class="panel grammar-panel">{field} {binary_op} {value} | {field} {binary_op} {field} | {function}([{param1}, {param2}, ...])</pre>
                                 <p>
-                                    This allows to filter results on one or more columns in a SQL-like language. Allowed operators are &lt; (less than), > (more than), = (equals), != (not equals), =< (equals or less than), => (equals or more than). Filter conditions can be chained with AND and OR operators or negated using NOT. You can use also some <a href="#">filter functions</a>.
+                                    This allows to filter results on one or more columns in a <span class="monospaced">SQL-like</span> language. Allowed operators are &lt; (less than), > (more than), = (equals), != (not equals), =< (equals or less than), => (equals or more than). Filter conditions can be chained with <span class="monospaced">AND</span> and <span class="monospaced">OR</span> operators or negated using <span class="monospaced">NOT</span>. You can use also some <a href="#">filter functions</a>.
                                 </p>
                                 <blockquote>
-                                    The special columns "category" in EuroGeo and POI datasets: they contain the label of the category assigned to each event or location, according to a <a href="">taxonomy/classification</a> is inspired by Geonames, Schema.org and other sources.
+                                    The special columns "category" in EuroGeo and POI datasets: they contain the label of the category assigned to each event or location, according to a <a href="">taxonomy/classification</a> is inspired by Geonames, Schema.org and other sources
                                 </blockquote>
                             </div>
                         </div>
@@ -188,7 +187,7 @@
         <div class="api-section row columns">
             <div class="large-12">
                 <h3 id="field-functions">Field functions</h3>
-                <blockquote>Note that field functions produce new columns with their result. The column name is arbitrary set by the API but it is possible to set a custom name by using the "AS" keyword.</blockquote>
+                <blockquote>Note that field functions produce new columns with their result. The column name is arbitrary set by the API but it is possible to set a custom name by using the <span class="monospaced">AS</span> keyword</blockquote>
                 <table>
                     <thead>
                     <tr>
