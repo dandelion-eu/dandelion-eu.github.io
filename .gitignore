@@ -4,3 +4,4 @@ dist
 .sass-cache
 .idea
 app/components
+app/scripts/lib
