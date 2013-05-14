@@ -9,7 +9,9 @@
 
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/app.css" />
+    <!-- build:js scripts/vendor/modernizr.js -->
     <script src="scripts/vendor/custom.modernizr.js"></script>
+    <!-- endbuild -->
 </head>
 <body>
 
@@ -260,13 +262,14 @@
     </footer>
 
 
-  <script>
-  document.write('<script src=' +
-  ('__proto__' in {} ? 'scripts/vendor/zepto' : 'scripts/vendor/jquery') +
-  '.js><\/script>')
-  </script>
-  
-  <script src="scripts/foundation/foundation.js"></script>
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/vendor/jquery.js"></script>
+
+    <!-- endbuild -->
+
+    <!-- build:js scripts/plugins.js -->
+
+    <script src="scripts/foundation/foundation.js"></script>
 	
 	<script src="scripts/foundation/foundation.alerts.js"></script>
 	
@@ -294,7 +297,7 @@
 	
 	<script src="scripts/foundation/foundation.topbar.js"></script>
 	
-  
+    <!-- endbuild -->
   <script>
     $(document).foundation();
   </script>

@@ -151,9 +151,7 @@ module.exports = function (grunt) {
                 relativeAssets: true,
                 require: 'zurb-foundation'
             },
-            dist: {
-                cssDir: 'app/styles'
-            },
+            dist: {},
             server: {
                 options: {
                     debugInfo: true
