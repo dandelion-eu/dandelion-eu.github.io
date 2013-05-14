@@ -1,2 +1,5 @@
+@charset "UTF-8";
 
+ 
 .icon-docs:before { content: '\f0c5'; } /* '' */
+.icon-link:before { content: '🔗'; } /* '\1f517' */
