@@ -318,7 +318,25 @@
                         <tbody>
                         <tr>
                             <td class="monospaced">count([column])</td>
-                            <td>Aggregation function for counting (similar to <span class="monospaced">SQL COUNT()</span>). If no parameter is specified the operation is performed on all columns. It is possible to use <span class="monospaced">DISTINCT</span> to consider only different elements.</td>
+                            <!--<td>Aggregation function for counting (similar to <span class="monospaced">SQL COUNT()</span>). If no parameter is specified the operation is performed on all columns. It is possible to use <span class="monospaced">DISTINCT</span> to consider only different elements.</td>-->
+                            <td>
+                                <div class="row">
+                                    <div class="large-12 columns">
+                                        <p>
+                                            Aggregation function for counting (similar to <span class="monospaced">SQL COUNT()</span>). If no parameter is specified the operation is performed on all columns. It is possible to use <span class="monospaced">DISTINCT</span> to consider only different elements.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="large-11 large-centered columns">
+                                        <div class="example-alert">
+                                            <ul class="square">
+                                                <li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$select</strong>=name&amp;<strong>$group</strong>=name</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td class="monospaced">sum(column)</td>
