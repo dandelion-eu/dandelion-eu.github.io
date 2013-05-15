@@ -152,9 +152,7 @@
                         <div class="row">
                             <div class="large-12 columns">
                                 <div class="example-alert" data-example="select">
-                                    <ul class="square">
-                                        <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">datagem/places/data.api?<strong>$select</strong>=name, category</a><span class="icon-docs"></span></li>-->
-                                    </ul>
+                                    <ul class="square"></ul>
                                 </div>
                             </div>
                         </div>
@@ -178,9 +176,7 @@
                         <div class="row">
                             <div class="large-12 columns">
                                 <div class="example-alert" data-example="where">
-                                    <ul class="square">
-                                        <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?$select=name,%20category</a></li>-->
-                                    </ul>
+                                    <ul class="square"></ul>
                                 </div>
                             </div>
                         </div>
@@ -201,9 +197,7 @@
                         <div class="row">
                             <div class="large-12 columns">
                                 <div class="example-alert" data-example="group">
-                                    <ul class="square">
-                                        <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$select</strong>=name&amp;<strong>$group</strong>=name</a></li>-->
-                                    </ul>
+                                    <ul class="square"></ul>
                                 </div>
                             </div>
                         </div>
@@ -225,9 +219,7 @@
                         <div class="row">
                             <div class="large-12 columns">
                                 <div class="example-alert" data-example="order">
-                                    <ul class="square">
-                                        <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$order</strong>=name ASC</a></li>-->
-                                    </ul>
+                                    <ul class="square"></ul>
                                 </div>
                             </div>
                         </div>
@@ -249,9 +241,7 @@
                         <div class="row">
                             <div class="large-12 columns">
                                 <div class="example-alert" data-example="limit">
-                                    <ul class="square">
-                                        <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$order</strong>=name ASC</a></li>-->
-                                    </ul>
+                                    <ul class="square"></ul>
                                 </div>
                             </div>
                         </div>
@@ -273,9 +263,7 @@
                         <div class="row">
                             <div class="large-12 columns">
                                 <div class="example-alert" data-example="offset">
-                                    <ul class="square">
-                                        <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$order</strong>=name ASC</a></li>-->
-                                    </ul>
+                                    <ul class="square"></ul>
                                 </div>
                             </div>
                         </div>
@@ -303,127 +291,111 @@
                 <div class="large-12">
                     <h3 class="api-section-title">Field functions<a class="anchor" name="field-functions" href="#field-functions"></a></h3>
                     <blockquote>Note that field functions produce new columns with their result. The column name is arbitrary set by the API but it is possible to set a custom name by using the <span class="monospaced">AS</span> keyword</blockquote>
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>Field functions</th>
-                            <th>Description</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td><h5>count<a class="anchor" name="field-function-count" href="#field-function-count"></a></h5></td>
-                            <!--<td>Aggregation function for counting (similar to <span class="monospaced">SQL COUNT()</span>). If no parameter is specified the operation is performed on all columns. It is possible to use <span class="monospaced">DISTINCT</span> to consider only different elements.</td>-->
-                            <td>
-                                <div class="row">
-                                    <div class="large-12 columns">
-                                        <pre class="panel grammar-panel">count([column:String])</pre>
-                                        <p>
-                                            Aggregation function for counting (similar to <span class="monospaced">SQL COUNT()</span>). If no parameter is specified the operation is performed on all columns. It is possible to use <span class="monospaced">DISTINCT</span> to consider only different elements.
-                                        </p>
+
+                    <div class="row">
+                        <div class="large-2 columns"><h5 class="monospaced">count<a class="anchor" name="field-function-count" href="#field-function-count"></a></h5></div>
+                        <div class="large-10 columns">
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <pre class="panel grammar-panel">count([column:String])</pre>
+                                    <p>
+                                        Aggregation function for counting (similar to <span class="monospaced">SQL COUNT()</span>). If no parameter is specified the operation is performed on all columns. It is possible to use <span class="monospaced">DISTINCT</span> to consider only different elements.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <div class="example-alert" data-example="count">
+                                        <ul class="square"></ul>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="large-12 columns">
-                                        <div class="example-alert" data-example="count">
-                                            <ul class="square">
-                                                <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$select</strong>=name&amp;<strong>$group</strong>=name</a></li>-->
-                                            </ul>
-                                        </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="large-2 columns"><h5 class="monospaced">sum<a class="anchor" name="field-function-sum" href="#field-function-sum"></a></h5></div>
+                        <div class="large-10 columns">
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <pre class="panel grammar-panel">count(column:String)</pre>
+                                    <p>
+                                        Aggregation function for summing (similar to <span class="monospaced">SQL SUM()</span>). It is possible to use <span class="monospaced">DISTINCT</span> to sum only distinct values. <em>Note: it works only for numeric values.</em>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <div class="example-alert" data-example="sum">
+                                        <ul class="square"></ul>
                                     </div>
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><h5>sum<a class="anchor" name="field-function-sum" href="#field-function-sum"></a></h5></td>
-                            <td>
-                                <div class="row">
-                                    <div class="large-12 columns">
-                                        <pre class="panel grammar-panel">sum(column:String)</pre>
-                                        <p>
-                                            Aggregation function for summing (similar to <span class="monospaced">SQL SUM()</span>). It is possible to use <span class="monospaced">DISTINCT</span> to sum only distinct values. <em>Note: it works only for numeric values.</em>
-                                        </p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="large-2 columns"><h5 class="monospaced">avg<a class="anchor" name="field-function-avg" href="#field-function-avg"></a></h5></div>
+                        <div class="large-10 columns">
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <pre class="panel grammar-panel">avg(column:String)</pre>
+                                    <p>
+                                        Aggregation function for calculating the average value (similar to <span class="monospaced">SQL AVG()</span>). It is possible to use <span class="monospaced">DISTINCT</span> to consider only distinct values. <em>Note: it works only for numeric values.</em>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <div class="example-alert" data-example="avg">
+                                        <ul class="square"></ul>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="large-12 columns">
-                                        <div class="example-alert" data-example="sum">
-                                            <ul class="square">
-                                                <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$select</strong>=name&amp;<strong>$group</strong>=name</a></li>-->
-                                            </ul>
-                                        </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="large-2 columns"><h5 class="monospaced">min<a class="anchor" name="field-function-min" href="#field-function-min"></a></h5></div>
+                        <div class="large-10 columns">
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <pre class="panel grammar-panel">min(column:String)</pre>
+                                    <p>
+                                        Aggregation function for extracting the minimum value (similar to <span class="monospaced">SQL MIN()</span>)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <div class="example-alert" data-example="min">
+                                        <ul class="square"></ul>
                                     </div>
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><h5>avg<a class="anchor" name="field-function-avg" href="#field-function-avg"></a></h5></td>
-                            <td>
-                                <div class="row">
-                                    <div class="large-12 columns">
-                                        <pre class="panel grammar-panel">avg(column:String)</pre>
-                                        <p>
-                                            Aggregation function for calculating the average value (similar to <span class="monospaced">SQL AVG()</span>). It is possible to use <span class="monospaced">DISTINCT</span> to consider only distinct values. <em>Note: it works only for numeric values.</em>
-                                        </p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="large-2 columns"><h5 class="monospaced">max<a class="anchor" name="field-function-max" href="#field-function-max"></a></h5></div>
+                        <div class="large-10 columns">
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <pre class="panel grammar-panel">max(column:String)</pre>
+                                    <p>
+                                        Aggregation function for extracting the maximum value (similar to <span class="monospaced">SQL MAX()</span>)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <div class="example-alert" data-example="max">
+                                        <ul class="square"></ul>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="large-12 columns">
-                                        <div class="example-alert" data-example="avg">
-                                            <ul class="square">
-                                                <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$select</strong>=name&amp;<strong>$group</strong>=name</a></li>-->
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><h5>min<a class="anchor" name="field-function-min" href="#field-function-min"></a></h5></td>
-                            <td>
-                                <div class="row">
-                                    <div class="large-12 columns">
-                                        <pre class="panel grammar-panel">min(column:String)</pre>
-                                        <p>
-                                            Aggregation function for extracting the minimum value (similar to <span class="monospaced">SQL MIN()</span>)
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="large-12 columns">
-                                        <div class="example-alert" data-example="min">
-                                            <ul class="square">
-                                                <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$select</strong>=name&amp;<strong>$group</strong>=name</a></li>-->
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><h5>max<a class="anchor" name="field-function-max" href="#field-function-max"></a></h5></td>
-                            <td>
-                                <div class="row">
-                                    <div class="large-12 columns">
-                                        <pre class="panel grammar-panel">max(column:String)</pre>
-                                        <p>
-                                            Aggregation function for extracting the maximum value (similar to <span class="monospaced">SQL MAX()</span>)
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="large-12 columns">
-                                        <div class="example-alert" data-example="max">
-                                            <ul class="square">
-                                                <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$select</strong>=name&amp;<strong>$group</strong>=name</a></li>-->
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- End of field function section -->
@@ -432,168 +404,171 @@
             <div class="row api-section">
                 <div class="large-12">
                     <h3 class="api-section-title">Filter functions<a class="anchor" name="filter-functions" href="#filter-functions"></a></h3>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th width="170">Filter functions</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><h5>fulltext<a class="anchor" name="filter-function-fulltext" href="#filter-function-fulltext"></a></h5></td>
-                                <td>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <pre class="panel grammar-panel">fulltext(text:String)</pre>
-                                            <p>
-                                                This function performs a full-text search on all columns of the datagem. Fulltext function can't match substrings yet
-                                            </p>
-                                        </div>
+                    <div class="row">
+                        <div class="large-4 columns"><h5 class="monospaced">fulltext<a class="anchor" name="filter-function-fulltext" href="#filter-function-fulltext"></a></h5></div>
+                    </div>
+                    <div class="row">
+                        <div class="large-10 push-2 columns">
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <pre class="panel grammar-panel">fulltext(text:String)</pre>
+                                    <p>
+                                        This function performs a full-text search on all columns of the datagem. Fulltext function can't match substrings yet
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <div class="example-alert" data-example="fulltext">
+                                        <ul class="square"></ul>
                                     </div>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <div class="example-alert" data-example="fulltext">
-                                                <ul class="square">
-                                                </ul>
-                                            </div>
-                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="large-4 columns"><h5 class="monospaced">within_box<a class="anchor" name="filter-function-withinbox" href="#filter-function-withinbox"></a></h5></div>
+                    </div>
+                    <div class="row">
+                        <div class="large-10 push-2 columns">
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <pre class="panel grammar-panel">within_box(min_lon:Float, min_lat:Float, max_lon:Float, max_lat:Float)</pre>
+                                    <p>
+                                        It's possible to restrict the search to a given area, called Bounding Box (in GIS terminology), in short "box". The coordinates of the corners of the bounding box have to be specified in geographical coordinates
+                                        (<a href="http://spatialreference.org/ref/epsg/4326/">WGS84 - EPSG projection code 4326</a>) - the same format used worldwide by the GPS devices. The order of coordinates must be: "min longitude, min latitude,max longitude, max latitude, i.e. the coordinates of lower-left and upper-right corner.
+                                        Entities are not returned if there is at least one point of its geometry that lies in the exterior of the given box.
+                                        <em>Note: badly-formatted bounding box leads to an empty list of results.</em>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <div class="example-alert" data-example="within_box">
+                                        <ul class="square"></ul>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><h5>within_box<a class="anchor" name="filter-function-withinbox" href="#filter-function-withinbox"></a></h5></td>
-                                <td>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <pre class="panel grammar-panel">within_box(min_lon:Float, min_lat:Float, max_lon:Float, max_lat:Float)</pre>
-                                            <p>
-                                                It's possible to restrict the search to a given area, called Bounding Box (in GIS terminology), in short "box". The coordinates of the corners of the bounding box have to be specified in geographical coordinates
-                                                (<a href="http://spatialreference.org/ref/epsg/4326/">WGS84 - EPSG projection code 4326</a>) - the same format used worldwide by the GPS devices. The order of coordinates must be: "min longitude, min latitude,max longitude, max latitude, i.e. the coordinates of lower-left and upper-right corner.
-                                                Entities are not returned if there is at least one point of its geometry that lies in the exterior of the given box.
-                                                <em>Note: badly-formatted bounding box leads to an empty list of results.</em>
-                                            </p>
-                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="large-4 columns"><h5 class="monospaced">intersects_box<a class="anchor" name="filter-function-intersectsbox" href="#filter-function-intersectsbox"></a></h5></div>
+                    </div>
+                    <div class="row">
+                        <div class="large-10 push-2 columns">
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <pre class="panel grammar-panel">intersects_box(min_lon:Float, min_lat:Float, max_lon:Float, max_lat:Float)</pre>
+                                    <p>
+                                        Similar to within_box but returns also entities with geometries that are even partially contained in the given box
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <div class="example-alert" data-example="intersects_box">
+                                        <ul class="square"></ul>
                                     </div>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <div class="example-alert" data-example="within_box">
-                                                <ul class="square">
-                                                </ul>
-                                            </div>
-                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="large-4 columns"><h5 class="monospaced">within_circle<a class="anchor" name="filter-function-withincircle" href="#filter-function-withincircle"></a></h5></div>
+                    </div>
+                    <div class="row">
+                        <div class="large-10 push-2 columns">
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <pre class="panel grammar-panel">within_circle(center_lon:Float, center_lat:Float, radius_in_meters:Integer)</pre>
+                                    <p>
+                                        Returns all the points within the given distance from the given point. Longitude and latitude have to be specified in geographical coordinates
+                                        (<a href="http://spatialreference.org/ref/epsg/4326/">WGS84 - EPSG projection code 4326</a>) while the radius has to be specified in meters.
+                                        Note that geometries that are not entirely contained in the circle are not returned.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <div class="example-alert" data-example="within_circle">
+                                        <ul class="square"></ul>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><h5>intersects_box<a class="anchor" name="filter-function-intersectsbox" href="#filter-function-intersectsbox"></a></h5></td>
-                                <td>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <pre class="panel grammar-panel">intersects_box(min_lon:Float, min_lat:Float, max_lon:Float, max_lat:Float)</pre>
-                                            <p>
-                                                Similar to within_box but returns also entities with geometries that are even partially contained in the given box
-                                            </p>
-                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="large-4 columns"><h5 class="monospaced">intersects_circle<a class="anchor" name="filter-function-intersectscircle" href="#filter-function-intersectscircle"></a></h5></div>
+                    </div>
+                    <div class="row">
+                        <div class="large-10 push-2 columns">
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <pre class="panel grammar-panel">intersects_circle(center_lon:Float, center_lat:Float, radius_in_meters:Integer)</pre>
+                                    <p>
+                                        Similar to within_circle but returns also entities with geometries that are even partially contained in the given circle
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <div class="example-alert" data-example="intersects_circle">
+                                        <ul class="square"></ul>
                                     </div>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <div class="example-alert" data-example="intersects_box">
-                                                <ul class="square">
-                                                </ul>
-                                            </div>
-                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="large-4 columns"><h5 class="monospaced">starts_with<a class="anchor" name="filter-function-startswith" href="#filter-function-startswith"></a></h5></div>
+                    </div>
+                    <div class="row">
+                        <div class="large-10 push-2 columns">
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <pre class="panel grammar-panel">starts_with(column, pattern:String)</pre>
+                                    <p>
+                                        This function matches all the rows where the given column starts with the given text
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <div class="example-alert" data-example="starts_with">
+                                        <ul class="square"></ul>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><h5>within_circle<a class="anchor" name="filter-function-withincircle" href="#filter-function-withincircle"></a></h5></td>
-                                <td>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <pre class="panel grammar-panel">within_circle(center_lon:Float, center_lat:Float, radius_in_meters:Integer)</pre>
-                                            <p>
-                                                Returns all the points within the given distance from the given point. Longitude and latitude have to be specified in geographical coordinates
-                                                (<a href="http://spatialreference.org/ref/epsg/4326/">WGS84 - EPSG projection code 4326</a>) while the radius has to be specified in meters.
-                                                Note that geometries that are not entirely contained in the circle are not returned.
-                                            </p>
-                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="large-4 columns"><h5 class="monospaced">contains<a class="anchor" name="filter-function-contains" href="#filter-function-contains"></a></h5></div>
+                    </div>
+                    <div class="row">
+                        <div class="large-10 push-2 columns">
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <pre class="panel grammar-panel">contains(column, pattern:String)</pre>
+                                    <p>
+                                        This function matches all the rows where the given column contains the given text
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <div class="example-alert" data-example="contains">
+                                        <ul class="square"></ul>
                                     </div>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <div class="example-alert" data-example="within_circle">
-                                                <ul class="square">
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><h5>intersects_circle<a class="anchor" name="filter-function-intersectscircle" href="#filter-function-intersectscircle"></a></h5></td>
-                                <td>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <pre class="panel grammar-panel">intersects_circle(center_lon:Float, center_lat:Float, radius_in_meters:Integer)</pre>
-                                            <p>
-                                                Similar to within_circle but returns also entities with geometries that are even partially contained in the given circle
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <div class="example-alert" data-example="intersects_circle">
-                                                <ul class="square">
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><h5>starts_with<a class="anchor" name="filter-function-startswith" href="#filter-function-startswith"></a></h5></td>
-                                <td>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <pre class="panel grammar-panel">starts_with(column, pattern:String)</pre>
-                                            <p>
-                                                This function matches all the rows where the given column starts with the given text
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <div class="example-alert" data-example="starts_with">
-                                                <ul class="square">
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><h5>contains<a class="anchor" name="filter-function-contains" href="#filter-function-contains"></a></h5></td>
-                                <td>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <pre class="panel grammar-panel">contains(column, pattern:String)</pre>
-                                            <p>
-                                                This function matches all the rows where the given column contains the given text
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <div class="example-alert" data-example="contains">
-                                                <ul class="square">
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- End of filter function section -->
