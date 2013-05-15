@@ -1,0 +1,28 @@
+- title: Orders by the results of an aggregation function
+  description: Counts how many provinces are there in each country, order the elements by the count() result
+  url: datagem/administrative-regions/data.api?$select=country.name,count(distinct province.name) AS "count_province"&$group=country.name&$order=count_province
+  tag:
+    - select
+    - count
+    - distinct
+    - as
+    - group
+    - order
+  featured: count
+
+- title: Limit the results to 2 items
+  description: Limited query to the first two items
+  url: datagem/places/data.api?$where=province.name="Trento"&$limit=2
+  tag:
+    - where
+    - limit
+  featured: limit
+
+- url: datagem/places/data.api?$select=municipality.name,%20province.name
+  description: Select all distinct couples formed by municipality and province
+  title: Simple query for distinct values
+  tag:
+    - select
+    - distinct
+  featured: distinct
+
