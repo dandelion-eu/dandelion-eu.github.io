@@ -8,7 +8,8 @@
     <title>dandelion docs</title>
 
     <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="styles/cd34777c.main.css">
+    <link rel="stylesheet" href="styles/6dbfa4b4.main.css">
+    <link rel="stylesheet" href="styles/fontawesome.css">
 
     <script src="scripts/vendor/e6903ff7.modernizr.js"></script>
 </head>
@@ -77,32 +78,40 @@
     <!-- end header -->
 
 
-    <div class="row">
+    <div id="doc-section" class="row">
 
         <!-- Main Content Section -->
         <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
         <div class="large-10 push-2 columns">
-            <h1> Dandelion API v1.0</h1>
-            <h2>Read API</h2>
-
-            <p>
-                The data can be queried programmatically through our API. Feel free to experiment the current features and report your user experience through our <a data-uv-forum-id="197822" data-uv-lightbox="classic_widget" data-uv-link-color="#007dbf" data-uv-mode="feedback" data-uv-primary-color="#262320" href="javascript:void(0)">Feedback system</a>.
-                The awesome <a href="http://dev.socrata.com/consumers/getting-started">Socrata API</a> has been inspiring our design, so that there's an almost total compatibility between the two.
-                Stay tuned - more functionality is on its way!
-            </p>
-
-            <div class="api-section row columns">
+            <div class="row">
                 <div class="small-12">
-                    <h3 id="api-endpoint">API endpoint</h3>
+                    <h1> Dandelion API v1.0</h1>
+                    <h2>Read API</h2>
+
+                    <p>
+                        The data can be queried programmatically through our API. Feel free to experiment the current features and report your user experience through our <a data-uv-forum-id="197822" data-uv-lightbox="classic_widget" data-uv-link-color="#007dbf" data-uv-mode="feedback" data-uv-primary-color="#262320" href="javascript:void(0)">Feedback system</a>.
+                        The awesome <a href="http://dev.socrata.com/consumers/getting-started">Socrata API</a> has been inspiring our design, so that there's an almost total compatibility between the two.
+                        Stay tuned - more functionality is on its way!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Endpoint section -->
+            <div class="row api-section">
+                <div class="small-12">
+                    <h3 class="api-section-title" id="api-endpoint">API endpoint</h3>
                     <!--<pre class="prettyprint">/api/v1/datagem/{datagemID}/data.{output format}</pre>-->
                     <pre class="panel">/api/&#8203;v1/&#8203;datagem/&#8203;{datagemId|datagemSlug}/&#8203;data.{outputFormat}</pre>
                     <p>You can obtain the datagem ID by clicking on the "Get API" button on the datagem page.</p>
                 </div>
             </div>
+            <!-- End of endpoint section -->
 
-            <div class="api-section row columns">
-                <div class="large-12">
-                    <h3 id="output-format">Output format</h3>
+
+            <!-- Output format section -->
+            <div class="row api-section">
+                <div class="small-12">
+                    <h3 class="api-section-title" id="output-format">Output format</h3>
                     <table>
                         <thead>
                             <tr>
@@ -123,13 +132,15 @@
                     </table>
                 </div>
             </div>
+            <!-- End of output format section -->
 
-            <div class="api-section row column">
-                <h3 id="parameters">Parameters</h3>
+            <!-- Parameters section -->
+            <div class="row api-section">
+                <h3 class="api-section-title" id="parameters">Parameters</h3>
 
                 <div class="row">
                     <div class="large-2 columns"><h5 class="monospaced">$select</h5></div>
-                    <div class="large-10 columns offset-1">
+                    <div class="large-10 columns">
                         <div class="row">
                             <div class="large-12 columns">
                                 <pre class="panel grammar-panel">[DISTINCT] {field} [AS "string"] | {function}([DISTINCT] {field} | {value}, ...) [AS "string"], ...</pre>
@@ -140,10 +151,10 @@
                         </div>
                         <div class="row">
                             <div class="large-12 columns">
-                                <div class="example-alert">
+                                <div class="example-alert" data-example="select">
                                     <ul class="square">
                                         <li>
-                                            <a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?$select=name,%20category</a>
+                                            <!--<a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">datagem/places/data.api?<strong>$select</strong>=name, category</a><span class="icon-docs"></span>-->
                                         </li>
                                     </ul>
                                 </div>
@@ -154,7 +165,7 @@
                 <hr>
                 <div class="row">
                     <div class="large-2 columns"><h5 class="monospaced">$where</h5></div>
-                    <div class="large-10 columns offset-1">
+                    <div class="large-10 columns">
                         <div class="row">
                             <div class="large-12 columns">
                                 <pre class="panel grammar-panel">{field} {binary_op} {value} | {field} {binary_op} {field} | {function}([{param1}, {param2}, ...])</pre>
@@ -168,63 +179,193 @@
                         </div>
                         <div class="row">
                             <div class="large-12 columns">
-                                <div class="example-alert">
-
-                                    <!--<strong>Examples:</strong>-->
+                                <div class="example-alert" data-example="where">
                                     <ul class="square">
-                                        <li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?$select=name,%20category</a></li>
+                                        <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?$select=name,%20category</a></li>-->
                                     </ul>
                                 </div>
-                                <!--<p class="example-alert">-->
-                                    <!--<a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?$select=name,%20category</a>-->
-                                <!--</p>-->
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                <hr>
+                <div class="row">
+                    <div class="large-2 columns"><h5 class="monospaced">$group</h5></div>
+                    <div class="large-10 columns">
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <pre class="panel grammar-panel">{field}[, {field}]*</pre>
+                                <p>
+                                    Allows to group rows that have common values. Useful in conjunction with <a href="">aggregation functions</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <div class="example-alert" data-example="group">
+                                    <ul class="square">
+                                        <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$select</strong>=name&amp;<strong>$group</strong>=name</a></li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <hr>
+                <div class="row">
+                    <div class="large-2 columns"><h5 class="monospaced">$order</h5></div>
+                    <div class="large-10 columns">
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <pre class="panel grammar-panel">{field} [DESC|ASC] [,{field} [DESC|ASC]]*</pre>
+                                <p>
+                                    allows to order the results according to one or more columns, in ascending or descending lexicographical order
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <div class="example-alert" data-example="order">
+                                    <ul class="square">
+                                        <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$order</strong>=name ASC</a></li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="api-section row columns">
-            <div class="large-12">
-                <h3 id="field-functions">Field functions</h3>
-                <blockquote>Note that field functions produce new columns with their result. The column name is arbitrary set by the API but it is possible to set a custom name by using the <span class="monospaced">AS</span> keyword</blockquote>
-                <table>
-                    <thead>
-                    <tr>
-                        <!--<th width="200">Format</th>-->
-                        <th>Field functions</th>
-                        <th>Description</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td class="monospaced">count([column])</td>
-                        <td>Aggregation function for counting (similar to <span class="monospaced">SQL COUNT()</span>). If no parameter is specified the operation is performed on all columns. It is possible to use <span class="monospaced">DISTINCT</span> to consider only different elements.</td>
-                    </tr>
-                    <tr>
-                        <td class="monospaced">sum(column)</td>
-                        <td>Aggregation function for summing (similar to <span class="monospaced">SQL SUM()</span>). It is possible to use <span class="monospaced">DISTINCT</span> to sum only distinct values. <em>Note: it works only for numeric values.</em></td>
-                    </tr>
-                    <tr>
-                        <td class="monospaced">avg(column)</td>
-                        <td>Aggregation function for calculating the average value (similar to <span class="monospaced">SQL AVG()</span>). It is possible to use <span class="monospaced">DISTINCT</span> to consider only distinct values. <em>Note: it works only for numeric values.</em></td>
-                    </tr>
-                    <tr>
-                        <td class="monospaced">min(column)</td>
-                        <td>Aggregation function for extracting the minimum value (similar to <span class="monospaced">SQL MIN()</span>).</td>
-                    </tr>
-                    <tr>
-                        <td class="monospaced">max(column)</td>
-                        <td>Aggregation function for extracting the maximum value (similar to <span class="monospaced">SQL MAX()</span>).</td>
-                    </tr>
-                    </tbody>
-                </table>
+                <hr>
+                <div class="row">
+                    <div class="large-2 columns"><h5 class="monospaced">$limit</h5></div>
+                    <div class="large-10 columns">
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <pre class="panel grammar-panel">{\d+}</pre>
+                                <p>
+                                    restricts the output to the first N results. If the parameter is not set, the query will be restricted to 100 results.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <div class="example-alert" data-example="limit">
+                                    <ul class="square">
+                                        <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$order</strong>=name ASC</a></li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <div class="row">
+                    <div class="large-2 columns"><h5 class="monospaced">$offset</h5></div>
+                    <div class="large-10 columns">
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <pre class="panel grammar-panel">{\d+}</pre>
+                                <p>
+                                    starts listing the results from the given index. Mostly used In combination with limit parameter, for pagination purposes.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <div class="example-alert" data-example="offset">
+                                    <ul class="square">
+                                        <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$order</strong>=name ASC</a></li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
-            <div>
-                testme
+            <!-- End of parameters section -->
+
+            <!-- Composites section -->
+            <div class="row api-section">
+                <div class="large-12">
+                    <h3 class="api-section-title" id="composites">Composites</h3>
+                    <p>Some datagem fields contain more than one value. For example in the Places datagem the municipality field contains both the name and the acheneID of the municipality. We call these fields <strong>composites</strong>. "municipality" is the <strong>composite root</strong>, while "name" and "acheneID" are called <strong>composite fields</strong>.</p>
+
+                    <p>You can access composite fields using dot notation: in the above example, you can filter on "municipality.name" and "municipality.acheneID" (but not on "municipality" itself).</p>
+
+                    <p>In $select, you can get the whole composite using the composite root, or just a field using dot notation.</p>
+                </div>
             </div>
+            <!-- End of composites section -->
+
+            <!-- Field function section -->
+            <div class="row api-section">
+                <div class="large-12">
+                    <h3 class="api-section-title" id="field-functions">Field functions</h3>
+                    <blockquote>Note that field functions produce new columns with their result. The column name is arbitrary set by the API but it is possible to set a custom name by using the <span class="monospaced">AS</span> keyword</blockquote>
+                    <table>
+                        <thead>
+                        <tr>
+                            <!--<th width="200">Format</th>-->
+                            <th>Field functions</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="monospaced">count([column])</td>
+                            <!--<td>Aggregation function for counting (similar to <span class="monospaced">SQL COUNT()</span>). If no parameter is specified the operation is performed on all columns. It is possible to use <span class="monospaced">DISTINCT</span> to consider only different elements.</td>-->
+                            <td>
+                                <div class="row">
+                                    <div class="large-12 columns">
+                                        <p>
+                                            Aggregation function for counting (similar to <span class="monospaced">SQL COUNT()</span>). If no parameter is specified the operation is performed on all columns. It is possible to use <span class="monospaced">DISTINCT</span> to consider only different elements.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="large-11 large-centered columns">
+                                        <div class="example-alert" data-example="count">
+                                            <ul class="square">
+                                                <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$select</strong>=name&amp;<strong>$group</strong>=name</a></li>-->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="monospaced">sum(column)</td>
+                            <td>Aggregation function for summing (similar to <span class="monospaced">SQL SUM()</span>). It is possible to use <span class="monospaced">DISTINCT</span> to sum only distinct values. <em>Note: it works only for numeric values.</em></td>
+                        </tr>
+                        <tr>
+                            <td class="monospaced">avg(column)</td>
+                            <td>Aggregation function for calculating the average value (similar to <span class="monospaced">SQL AVG()</span>). It is possible to use <span class="monospaced">DISTINCT</span> to consider only distinct values. <em>Note: it works only for numeric values.</em></td>
+                        </tr>
+                        <tr>
+                            <td class="monospaced">min(column)</td>
+                            <td>Aggregation function for extracting the minimum value (similar to <span class="monospaced">SQL MIN()</span>).</td>
+                        </tr>
+                        <tr>
+                            <td class="monospaced">max(column)</td>
+                            <td>Aggregation function for extracting the maximum value (similar to <span class="monospaced">SQL MAX()</span>).</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- End of field function section -->
+
+            <!-- Limits section -->
+            <div class="row api-section">
+                <div class="large-12">
+                    <h3 class="api-section-title" id="limits">Limits</h3>
+                    <p>The V1 API have no specified requests limit. You are nonetheless invited to throttle your requests so that the service remains responsive for everyone. Anyway there’s a limit on the number of maximum elements that an API response can return, currently set to 100000. Please use pagination if you need to retrieve more elements.</p>
+                </div>
+            </div>
+            <!-- End of limits section -->
 
         </div>
 
@@ -261,9 +402,9 @@
     </footer>
 
 
-    <script src="scripts/61f63d11.main.js"></script>
+    <script src="scripts/ba7af852.libray.js"></script>
 
-    <script src="scripts/50fc8aad.plugins.js"></script>
+    <script src="scripts/f6b2f256.main.js"></script>
   <script>
     $(document).foundation();
   </script>
