@@ -7,9 +7,16 @@
     $(apiSectionClass).append('<span class="icon-link"></span>');
     $(exampleSelector).addClass('hidden');
 
+    $.get('dataApi.yaml')
+        .success(function(data){
+            var parsedData = jsyaml.load(data)
+              , parametersSection = '#auto-parameters';
+
+
+        })
     $.get('examples.yaml')
         .success(function (data){
-            var parsedData = window.doc = jsyaml.load(data);
+            var parsedData = jsyaml.load(data);
             window.docsApp.examples = new window.docsApp.Examples();
             window.docsApp.examples.add(parsedData);
 

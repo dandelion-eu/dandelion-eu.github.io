@@ -1,0 +1,36 @@
+- parameters:
+    - name: $select
+      grammar: '[DISTINCT] {field} [AS "string"] | {function}([DISTINCT] {field} | {value}, ...) [AS "string"], ...'
+      description: Only shows the specified column, or list of columns separated by comma. Distinct or <a href="">field functions</a> can be used. It is also possible to rename columns with the <span class="monospaced">AS</span> keyword.
+
+    - name: $where
+      grammar: '{field} {binary_op} {value} | {field} {binary_op} {field} | {function}([{param1}, {param2}, ...])'
+      description: 'This allows to filter results on one or more columns in a <span class="monospaced">SQL-like</span> language. Allowed operators are &lt; (less than), &gt; (more than), = (equals), != (not equals), =&lt; (equals or less than), =&gt; (equals or more than). Filter conditions can be chained with <span class="monospaced">AND</span> and <span class="monospaced">OR</span> operators or negated using <span class="monospaced">NOT</span>. You can use also some <a href="#">filter functions</a>.
+                                                   <blockquote>
+                                                       The special columns "category" in EuroGeo and POI datasets: they contain the label of the category assigned to each event or location, according to a <a href="">taxonomy/classification</a> is inspired by Geonames, Schema.org and other sources
+                                                   </blockquote>'
+    - name: $group
+      grammar: '{field}[, {field}]*'
+      description: 'Allows to group rows that have common values. Useful in conjunction with <a href="">aggregation functions</a>'
+
+    - name: $order
+      grammar: '{field} [DESC|ASC] [,{field} [DESC|ASC]]*'
+      description: 'Allows to order the results according to one or more columns, in ascending or descending lexicographical order'
+
+    - name: $limit
+      grammar: '{\d+}'
+      description: 'Restricts the output to the first N results. If the parameter is not set, the query will be restricted to 100 results.'
+
+    - name: $offset
+      grammar: '{\d+}'
+      description: 'Starts listing the results from the given index. Mostly used In combination with limit parameter, for pagination purposes.'
+
+- fieldFunctions:
+    - name: asd
+      grammar: aaa
+      description:
+
+- filterFunctions:
+    - name:
+      grammar:
+      description:

@@ -16,6 +16,11 @@
     window.docsApp.Examples = Backbone.Collection.extend({
     });
 
+    window.docsApp.SectionView = Backbone.View.extend({
+
+
+    });
+
     window.docsApp.DocView = Backbone.View.extend({
         exampleTemplate: '<li><a class="example-link" title="<%= title %>" target="_blank" href="http://dandelion.eu/api/v1/<%=url%>"><%= prettyUrl %></a></li>',
 

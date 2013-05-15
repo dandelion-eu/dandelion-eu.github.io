@@ -14,6 +14,30 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="scripts/vendor/custom.modernizr.js"></script>
     <!-- endbuild -->
+    <script type="text/template" id="api-section-template">
+        <div class="row">
+            <div class="large-2 columns"><h5 class="monospaced"><%= section %><a class="anchor" name="<%= father-section %>-<%= clean-section %>" href="#<%= father-section %>-<%= clean-section %>"></a></h5></div>
+            <div class="large-10 columns">
+                <div class="row">
+                    <div class="large-12 columns">
+                        <pre class="panel grammar-panel">[DISTINCT] {field} [AS "string"] | {function}([DISTINCT] {field} | {value}, ...) [AS "string"], ...</pre>
+                        <p>
+                            Only shows the specified column, or list of columns separated by comma. Distinct or <a href="#">field functions</a> can be used. It is also possible to rename columns with the <span class="monospaced">AS</span> keyword.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <div class="example-alert" data-example='select'>
+                            <ul class="square"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </script>
+
 </head>
 <body>
 
@@ -104,8 +128,10 @@
             </div>
             <!-- End of output format section -->
 
+
+
             <!-- Parameters section -->
-            <div class="row  api-section">
+            <div class="row  api-section" id="auto-parameters">
                 <h3 class="api-section-title">Parameters<a class="anchor" name="parameters" href="#parameters"></a></h3>
 
                 <div class="row">
