@@ -140,9 +140,33 @@
 
 - title: Order results by one column
   description: Search for all places that contain "Pizzeria" in the name and are located in the province of Trento, order them by name (descending)
-  url: datagem/places/data.api?$where=province.name="Trento" and icontains(name, "pizzeria")&$order=name DESC
+  url: datagem/places/data.api?$where=province.name="Trento" and contains(name, "pizzeria")&$order=name DESC
   tags:
     - where
-    - icontains
+    - contains
     - order
-  featured: icontains
+  featured: contains
+
+- title: Lookup municipalities by their alternate names (exact match)
+  description: Search for a municipality (Administrative Regions level 4) by an alternate name
+  url: datagem/administrative-regions/data.api?level=4&$where=array_in(alternateNames, "Senale")
+  tags:
+    - where
+    - array_in
+  featured: array_in
+
+- title: Lookup municipalities by their alternate names (contains)
+  description: Match municipalities (Administrative Regions level 4) searching an alternate name containing a specific string
+  url: datagem/administrative-regions/data.api?level=4&$where=array_elem_contains(alternateNames, "San Felice")
+  tags:
+    - where
+    - array_elem_contains
+  featured: array_elem_contains
+
+- title: Lookup municipalities by their alternate names (starts with)
+  description: Match municipalities (Administrative Regions level 4) searching an alternate name starting with a specific string, very useful for building type-ahead functionalities
+  url: datagem/administrative-regions/data.api?level=4&$where=array_elem_starts_with(alternateNames, "Unsere Liebe Frau")
+  tags:
+    - where
+    - array_elem_starts_with
+  featured: array_elem_starts_with
