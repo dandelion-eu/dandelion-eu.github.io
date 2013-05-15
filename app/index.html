@@ -80,7 +80,7 @@
     <!-- end header -->
 
 
-    <div class="row">
+    <div id="doc-section" class="row">
 
         <!-- Main Content Section -->
         <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
@@ -153,10 +153,10 @@
                         </div>
                         <div class="row">
                             <div class="large-12 columns">
-                                <div class="example-alert">
+                                <div class="example-alert" data-example='select'>
                                     <ul class="square">
                                         <li>
-                                            <a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">datagem/places/data.api?<strong>$select</strong>=name, category</a><span class="icon-docs"></span>
+                                            <!--<a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">datagem/places/data.api?<strong>$select</strong>=name, category</a><span class="icon-docs"></span>-->
                                         </li>
                                     </ul>
                                 </div>
@@ -181,9 +181,9 @@
                         </div>
                         <div class="row">
                             <div class="large-12 columns">
-                                <div class="example-alert">
+                                <div class="example-alert" data-example="where">
                                     <ul class="square">
-                                        <li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?$select=name,%20category</a></li>
+                                        <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?$select=name,%20category</a></li>-->
                                     </ul>
                                 </div>
                             </div>
@@ -204,9 +204,9 @@
                         </div>
                         <div class="row">
                             <div class="large-12 columns">
-                                <div class="example-alert">
+                                <div class="example-alert" data-example="group">
                                     <ul class="square">
-                                        <li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$select</strong>=name&amp;<strong>$group</strong>=name</a></li>
+                                        <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$select</strong>=name&amp;<strong>$group</strong>=name</a></li>-->
                                     </ul>
                                 </div>
                             </div>
@@ -228,9 +228,9 @@
                         </div>
                         <div class="row">
                             <div class="large-12 columns">
-                                <div class="example-alert">
+                                <div class="example-alert" data-example="order">
                                     <ul class="square">
-                                        <li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$order</strong>=name ASC</a></li>
+                                        <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$order</strong>=name ASC</a></li>-->
                                     </ul>
                                 </div>
                             </div>
@@ -252,9 +252,9 @@
                         </div>
                         <div class="row">
                             <div class="large-12 columns">
-                                <div class="example-alert">
+                                <div class="example-alert" data-example="limit">
                                     <ul class="square">
-                                        <li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$order</strong>=name ASC</a></li>
+                                        <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$order</strong>=name ASC</a></li>-->
                                     </ul>
                                 </div>
                             </div>
@@ -276,9 +276,9 @@
                         </div>
                         <div class="row">
                             <div class="large-12 columns">
-                                <div class="example-alert">
+                                <div class="example-alert" data-example="offset">
                                     <ul class="square">
-                                        <li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$order</strong>=name ASC</a></li>
+                                        <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$order</strong>=name ASC</a></li>-->
                                     </ul>
                                 </div>
                             </div>
@@ -329,9 +329,9 @@
                                 </div>
                                 <div class="row">
                                     <div class="large-11 large-centered columns">
-                                        <div class="example-alert">
+                                        <div class="example-alert" data-example="count">
                                             <ul class="square">
-                                                <li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$select</strong>=name&amp;<strong>$group</strong>=name</a></li>
+                                                <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$select</strong>=name&amp;<strong>$group</strong>=name</a></li>-->
                                             </ul>
                                         </div>
                                     </div>
@@ -404,48 +404,31 @@
     </footer>
 
 
-    <!-- build:js scripts/main.js -->
+    <!-- build:js scripts/libray.js -->
     <script src="scripts/vendor/jquery.js"></script>
-
-    <!-- endbuild -->
-
-    <!-- build:js scripts/plugins.js -->
+    <script src="scripts/lib/underscore/underscore-min.js"></script>
+    <script src="scripts/lib/backbone/backbone-min.js"></script>
+    <script src="scripts/lib/js-yaml.min.js"></script>
 
     <script src="scripts/foundation/foundation.js"></script>
-	
 	<script src="scripts/foundation/foundation.alerts.js"></script>
-	
 	<script src="scripts/foundation/foundation.clearing.js"></script>
-	
 	<script src="scripts/foundation/foundation.cookie.js"></script>
-	
 	<script src="scripts/foundation/foundation.dropdown.js"></script>
-	
 	<script src="scripts/foundation/foundation.forms.js"></script>
-	
 	<script src="scripts/foundation/foundation.joyride.js"></script>
-	
 	<script src="scripts/foundation/foundation.magellan.js"></script>
-	
 	<script src="scripts/foundation/foundation.orbit.js"></script>
-	
 	<script src="scripts/foundation/foundation.placeholder.js"></script>
-	
 	<script src="scripts/foundation/foundation.reveal.js"></script>
-	
 	<script src="scripts/foundation/foundation.section.js"></script>
-	
 	<script src="scripts/foundation/foundation.tooltips.js"></script>
-	
 	<script src="scripts/foundation/foundation.topbar.js"></script>
-
-	<script src="scripts/vendor/js-yaml.min.js"></script>
-
     <!-- endbuild -->
 
     <!-- build:js scripts/main.js -->
+    <script src="scripts/exampleApp.js"></script>
     <script src="scripts/main.js"></script>
-
     <!-- endbuild -->
   <script>
     $(document).foundation();
