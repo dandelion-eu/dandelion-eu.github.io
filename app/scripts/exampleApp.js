@@ -2,6 +2,14 @@
     "use strict";
     window.docsApp = {};
 
+    window.docsApp.createPrettyUrl = function(url){
+        var brakeChar = '&#8203;'
+          , parsedUrl;
+        parsedUrl = url.replace(/\//g, "/"+brakeChar);
+        parsedUrl = parsedUrl.replace(/(\$\w+)/g, "<strong>\$1</strong>");
+        return parsedUrl;
+    };
+
     window.docsApp.Examples = Backbone.Collection.extend({
     });
 
@@ -24,7 +32,7 @@
         renderExample: function(example){
           var context = {
             url: encodeURI(example.get('url')),
-            prettyUrl: example.get('url'),
+            prettyUrl: window.docsApp.createPrettyUrl(example.get('url')),
             title: example.get('title', '')
           };
           return _.template(this.exampleTemplate, context);
