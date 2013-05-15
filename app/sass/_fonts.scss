@@ -1,8 +1,5 @@
-.monospaced {
-  font-family: 'Source Code Pro', sans-serif;
-}
+$monospacedFont: 'Source Code Pro', sans-serif;
 
-
-pre {
-  font-family: 'Source Code Pro', sans-serif;
+.monospaced, pre, .example-link {
+  font-family: $monospacedFont;
 }

@@ -7,11 +7,9 @@
     $(apiSectionClass).append('<span class="icon-link"></span>');
     $(exampleSelector).addClass('hidden');
 
-    console.debug('reading example done');
     $.get('examples.yaml')
         .success(function (data){
             var parsedData = window.doc = jsyaml.load(data);
-            console.debug('data readed ',parsedData);
             window.docsApp.examples = new window.docsApp.Examples();
             window.docsApp.examples.add(parsedData);
 

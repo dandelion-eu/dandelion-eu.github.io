@@ -71,6 +71,12 @@ $gray: #ddd;
   .square {
     list-style-position: inside;
     margin-bottom: 0;
+    li {
+      margin-top: 10px;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
   }
 }
 

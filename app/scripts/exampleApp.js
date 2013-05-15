@@ -6,7 +6,7 @@
     });
 
     window.docsApp.DocView = Backbone.View.extend({
-        exampleTemplate: '<li><a title="<%= title %>" target="_blank" href="http://dandelion.eu/api/v1/<%=url%>"><%= prettyUrl %></a></li>',
+        exampleTemplate: '<li><a class="example-link" title="<%= title %>" target="_blank" href="http://dandelion.eu/api/v1/<%=url%>"><%= prettyUrl %></a></li>',
 
         initialize: function(){
             _.bindAll(this, 'getElByTag');
@@ -15,8 +15,6 @@
             this.allTags = $.map(this.examples, function(el){
                 return $(el).data('example');
             });
-            console.log(this.allTags);
-
         },
 
         getElByTag: function(tag){
@@ -36,11 +34,14 @@
             var that = this;
             _.each(this.allTags, function(tag){
                 var example = that.collection.where({featured: tag})
-                  , $tagEl;
+                  , $tagEl
+                  , $tagList;
                 if (example.length > 0){
                     $tagEl = that.getElByTag(tag);
                     $tagEl.removeClass('hidden');
-                    $tagEl.find('ul').append(that.renderExample(example[0]));
+                    $tagList = $tagEl.find('ul')
+                    for (var i=example.length; i--;)
+                        $tagList.append(that.renderExample(example[i]));
                 }
             });
             return this;
