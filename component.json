@@ -5,5 +5,8 @@
     "modernizr": "~2.6.2",
     "jquery": "~1.9.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+      "backbone": "1.0.0",
+      "underscore": "1.4.4"
+  }
 }
