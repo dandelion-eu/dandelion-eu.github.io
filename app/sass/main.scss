@@ -57,6 +57,7 @@ $gray: #ddd;
   border: 1px solid $gray;
   font-weight: normal;
   margin-bottom: 0;
+  padding-top: emCalc(16px);
 
   &:before {
     content: "examples";

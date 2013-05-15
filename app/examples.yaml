@@ -1,7 +1,7 @@
 - title: Orders by the results of an aggregation function
   description: Counts how many provinces are there in each country, order the elements by the count() result
   url: datagem/administrative-regions/data.api?$select=country.name,count(distinct province.name) AS "count_province"&$group=country.name&$order=count_province
-  tag:
+  tags:
     - select
     - count
     - distinct
@@ -13,7 +13,7 @@
 - title: Limit the results to 2 items
   description: Limited query to the first two items
   url: datagem/places/data.api?$where=province.name="Trento"&$limit=2
-  tag:
+  tags:
     - where
     - limit
   featured: limit
@@ -21,7 +21,7 @@
 - title: Simple query for distinct values
   description: Select all distinct couples formed by municipality and province
   url: datagem/places/data.api?$select=municipality.name, province.name
-  tag:
+  tags:
     - select
     - distinct
   featured: distinct
@@ -29,14 +29,14 @@
 - title: Query that selects two columns
   description: Select all elements, for each one return only name and category
   url: datagem/places/data.api?$select=name, category
-  tag:
+  tags:
     - select
   featured: select
 
 - title: Simple query with count
   description: Counts how many elements are there in the dataset and sets the new column name to "total_count".
   url: datagem/places/data.api?$select=count() AS "total_count"
-  tag:
+  tags:
     - select
     - count
     - as
@@ -45,7 +45,7 @@
 - title: Query that counts all distinct values on one column
   description: Counts how many distinct municipalities are there
   url: datagem/places/data.api?$select=count(distinct municipality.acheneID)
-  tag:
+  tags:
     - select
     - count
     - distinct
@@ -54,7 +54,7 @@
 - title: Query that uses grouping and an aggregation function
   description: Counts how many elements are there in each municipality
   url: datagem/places/data.api?$select=count(),municipality.name&$group=municipality.name
-  tag:
+  tags:
     - select
     - count
     - group
@@ -63,7 +63,7 @@
 - title: Select a specific entity using the Achene ID
   description: All entities on dandelion are identified by a unique id called "acheneID"
   url: datagem/places/data.api?acheneID="http://dandelion.eu/resource/686228a1d9abc9911a425abe8ea97209a4c715f8"
-  tag:
+  tags:
     - where
   featured: where
 
@@ -71,21 +71,21 @@
   description: Search all places located in the province of Trento, from the Italian places datagem (note that the exact match must be provided)
   url: datagem/places/data.api?$where=province.name="Trento"
   shortUrl: datagem/places/data.api?province.name="Trento"
-  tag:
+  tags:
     - where
   featured: where
 
 - title: Query on composites
   description: Search all places located in the municipality of Trento (filter on Trento acheneID), from the Italian places datagem, and returns only the place name and the municipality composite
   url: datagem/places/data.api?municipality.acheneID="http://dandelion.eu/resource/3bcdfc4b96c1befba3a649982a248f77a64231ff"&$select=name,municipality
-  tag:
+  tags:
     - select
   featured: select
 
 - title: Query with two concatenated filters
   description: Search for all places in the province of Trento, that contain "Teatro" in any of the columns
   url: datagem/places/data.api?$where=province.name="Trento" AND fulltext("Teatro")
-  tag:
+  tags:
     - fulltext
     - where
   featured: fulltext
@@ -93,7 +93,7 @@
 - title: Query that uses a fulltext search with two terms
   description: Search for all places that contain the words "Hotel” and “Bolzano" (note that the fulltext search does not restrict the search to the exact string "Hotel Bolzano", but searches all columns for both words separately, chained in “and”)
   url: datagem/places/data.api?$where=fulltext(%22Hotel%20Bolzano%22)
-  tag:
+  tags:
     - where
     - fulltext
   featured: fulltext
@@ -101,7 +101,7 @@
 - title: Query limited to a particular area
   description: Search for all places in the given area (approximately around the province of Trento), that contain both "Hotel" and "Bolzano" in any of the columns
   url: datagem/places/data.api?$where=(fulltext("Hotel Bolzano") AND within_box(10.381,45.673,12.477,46.591))
-  tag:
+  tags:
     - where
     - fulltext
     - within_box
@@ -110,7 +110,7 @@
 - title: Query for entities within a given distance
   description: Search for all municipalities located less than 5km from the given point
   url: datagem/administrative-regions/data.api?$where=intersects_circle(11.066, 45.916, 5000) AND level="4"
-  tag:
+  tags:
     - where
     - intersects_circle
   featured: intersects_circle
@@ -118,7 +118,7 @@
 - title: Query with substring
   description: Search for all places that contain “Cafe'” in the column name
   url: datagem/places/data.api?$where=contains(name, "Cafe'")
-  tag:
+  tags:
     - where
     - contains
   featured: contains
@@ -126,7 +126,7 @@
 - title: Query with substring at the beginning
   description: Search for all places with name that starts_with “Hotel”
   url: datagem/places/data.api?$where=starts_with(name, "Hotel")
-  tag:
+  tags:
     - where
     - starts_with
   featured: starts_with
@@ -134,14 +134,14 @@
 - title: Query for null values
   description: Select all elements without fax
   url: datagem/places/data.api?$where=fax=null
-  tag:
+  tags:
     - where
   featured: where
 
 - title: Order results by one column
   description: Search for all places that contain "Pizzeria" in the name and are located in the province of Trento, order them by name (descending)
   url: datagem/places/data.api?$where=province.name="Trento" and icontains(name, "pizzeria")&$order=name DESC
-  tag:
+  tags:
     - where
     - icontains
     - order

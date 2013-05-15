@@ -2,11 +2,14 @@
     "use strict";
     window.docsApp = {};
 
-    window.docsApp.createPrettyUrl = function(url){
+    window.docsApp.createPrettyUrl = function(url, tags){
         var brakeChar = '&#8203;'
+          , paramsRegEx = /(\$\w+)/g
           , parsedUrl;
         parsedUrl = url.replace(/\//g, "/"+brakeChar);
-        parsedUrl = parsedUrl.replace(/(\$\w+)/g, "<strong>\$1</strong>");
+        _.each(tags, function(tag){
+            parsedUrl = parsedUrl.replace(tag, "<strong>" + tag + "</strong>", 'g');
+        });
         return parsedUrl;
     };
 
@@ -32,7 +35,7 @@
         renderExample: function(example){
           var context = {
             url: encodeURI(example.get('url')),
-            prettyUrl: window.docsApp.createPrettyUrl(example.get('url')),
+            prettyUrl: window.docsApp.createPrettyUrl(example.get('url'), example.get('tags')),
             title: example.get('title', '')
           };
           return _.template(this.exampleTemplate, context);
