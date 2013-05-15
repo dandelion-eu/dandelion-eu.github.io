@@ -101,7 +101,7 @@
             <!-- Endpoint section -->
             <div class="row  api-section">
                 <div class="small-12">
-                    <h3 class="api-section-title" id="api-endpoint">API endpoint</h3>
+                    <h3 class="api-section-title">API endpoint<a class="anchor" name="api-endpoint" href="#api-endpoint"></a></h3>
                     <!--<pre class="prettyprint">/api/v1/datagem/{datagemID}/data.{output format}</pre>-->
                     <pre class="panel">/api/&#8203;v1/&#8203;datagem/&#8203;{datagemId|datagemSlug}/&#8203;data.{outputFormat}</pre>
                     <p>You can obtain the datagem ID by clicking on the "Get API" button on the datagem page.</p>
@@ -113,7 +113,7 @@
             <!-- Output format section -->
             <div class="row  api-section">
                 <div class="small-12">
-                    <h3 class="api-section-title" id="output-format">Output format</h3>
+                    <h3 class="api-section-title">Output format<a class="anchor" name="output-format" href="#output-format"></a></h3>
                     <table>
                         <thead>
                             <tr>
@@ -138,7 +138,7 @@
 
             <!-- Parameters section -->
             <div class="row  api-section">
-                <h3 class="api-section-title" id="parameters">Parameters</h3>
+                <h3 class="api-section-title">Parameters<a class="anchor" name="parameters" href="#parameters"></a></h3>
 
                 <div class="row">
                     <div class="large-2 columns"><h5 class="monospaced">$select</h5></div>
@@ -292,7 +292,7 @@
             <!-- Composites section -->
             <div class="row api-section">
                 <div class="large-12">
-                    <h3 class="api-section-title" id="composites">Composites</h3>
+                    <h3 class="api-section-title">Composites<a class="anchor" name="composites" href="#composites"></a></h3>
                     <p>Some datagem fields contain more than one value. For example in the Places datagem the municipality field contains both the name and the acheneID of the municipality. We call these fields <strong>composites</strong>. "municipality" is the <strong>composite root</strong>, while "name" and "acheneID" are called <strong>composite fields</strong>.</p>
 
                     <p>You can access composite fields using dot notation: in the above example, you can filter on "municipality.name" and "municipality.acheneID" (but not on "municipality" itself).</p>
@@ -305,7 +305,7 @@
             <!-- Field function section -->
             <div class="row api-section">
                 <div class="large-12">
-                    <h3 class="api-section-title" id="field-functions">Field functions</h3>
+                    <h3 class="api-section-title" >Field functions<a class="anchor" name="field-functions" href="#field-functions"></a></h3>
                     <blockquote>Note that field functions produce new columns with their result. The column name is arbitrary set by the API but it is possible to set a custom name by using the <span class="monospaced">AS</span> keyword</blockquote>
                     <table>
                         <thead>
@@ -363,7 +363,7 @@
             <!-- Limits section -->
             <div class="row api-section">
                 <div class="large-12">
-                    <h3 class="api-section-title" id="limits">Limits</h3>
+                    <h3 class="api-section-title">Limits<a class="anchor" name="limits" href="#limits"></a></h3>
                     <p>The V1 API have no specified requests limit. You are nonetheless invited to throttle your requests so that the service remains responsive for everyone. Anyway there’s a limit on the number of maximum elements that an API response can return, currently set to 100000. Please use pagination if you need to retrieve more elements.</p>
                 </div>
             </div>

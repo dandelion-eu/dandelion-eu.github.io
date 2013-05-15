@@ -1,6 +1,6 @@
 (function(){
     "use strict";
-    var apiSectionClass = '.api-section-title'
+    var apiSectionClass = '.anchor'
       , exampleSelector = '.example-alert';
 
     //TODO add a link
