@@ -34,46 +34,14 @@
         <section class="top-bar-section hide-for-medium-up">
             <!-- Right Nav Section -->
             <ul class="right">
-                <li class="divider"></li>
-                <li class="has-dropdown">
-                    <a href="#">Main Item 1</a>
-                    <ul class="dropdown">
-                        <li><label>Section Name</label></li>
-                        <li class="has-dropdown">
-                            <a href="#" class="">Has Dropdown, Level 1</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Dropdown Options</a></li>
-                                <li><a href="#">Dropdown Options</a></li>
-                                <li><a href="#">Level 2</a></li>
-                                <li><a href="#">Subdropdown Option</a></li>
-                                <li><a href="#">Subdropdown Option</a></li>
-                                <li><a href="#">Subdropdown Option</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Dropdown Option</a></li>
-                        <li><a href="#">Dropdown Option</a></li>
-                        <li class="divider"></li>
-                        <li><label>Section Name</label></li>
-                        <li><a href="#">Dropdown Option</a></li>
-                        <li><a href="#">Dropdown Option</a></li>
-                        <li><a href="#">Dropdown Option</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">See all &rarr;</a></li>
-                    </ul>
-                </li>
-                <li class="divider"></li>
-                <li><a href="#">Main Item 2</a></li>
-                <li class="divider"></li>
-                <li class="has-dropdown">
-                    <a href="#">Main Item 3</a>
-                    <ul class="dropdown">
-                        <li><a href="#">Dropdown Option</a></li>
-                        <li><a href="#">Dropdown Option</a></li>
-                        <li><a href="#">Dropdown Option</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">See all &rarr;</a></li>
-                    </ul>
-                </li>
+                <li><a href="#api-endpoint">Endpoint</a></li>
+                <li><a href="#output-format">Output format</a></li>
+                <li><a href="#parameters">Parameters</a></li>
+                <li><a href="#composites">Composites</a></li>
+                <li><a href="#field-functions">Field functions</a></li>
+                <li><a href="#filter-functions">Filter functions</a></li>
+                <li><a href="#response-code">Response code</a></li>
+                <li><a href="#limits">Limits</a></li>
             </ul>
         </section>
     </nav>
@@ -575,6 +543,67 @@
             </div>
             <!-- End of filter function section -->
 
+            <!-- Response section -->
+            <div class="row api-section">
+                <div class="large-12">
+                    <h3 class="api-section-title">Response Code<a class="anchor" name="response-code" href="#response-code"></a></h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Code range</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>200 - 299</td>
+                                <td>The request was successful</td>
+                            </tr>
+                            <tr>
+                                <td>400 - 499</td>
+                                <td>The request failed because there was something wrong with the request</td>
+                            </tr>
+                            <tr>
+                                <td>500 - 599</td>
+                                <td>The request failed because there is a problem on the server. Our fault!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        All 4xx error codes are associated with a JSON response, that contains:
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>message</td>
+                                <td>a specific error message, that suggests the cause of the error</td>
+                            </tr>
+                            <tr>
+                                <td>code</td>
+                                <td>the internal error code that the API return</td>
+                            </tr>
+                            <tr>
+                                <td>data</td>
+                                <td>object with additional error information</td>
+                            </tr>
+                            <tr>
+                                <td>error</td>
+                                <td>"true"</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </p>
+                </div>
+            </div>
+            <!-- End of response section -->
+
+
             <!-- Limits section -->
             <div class="row api-section">
                 <div class="large-12">
@@ -591,14 +620,14 @@
         <div class="large-2 pull-10 columns hide-for-small">
             <p><img src="http://placehold.it/320x240&text=Ad" /></p>
             <ul class="side-nav">
-                <li><a href="#">Endpoint</a></li>
-                <li><a href="#">Output format</a></li>
-                <li><a href="#">Parameters</a></li>
-                <li><a href="#">Composites</a></li>
-                <li><a href="#">Field functions</a></li>
-                <li><a href="#">Function functions</a></li>
-                <li><a href="#">Limits</a></li>
-                <li><a href="#">Response code</a></li>
+                <li><a href="#api-endpoint">Endpoint</a></li>
+                <li><a href="#output-format">Output format</a></li>
+                <li><a href="#parameters">Parameters</a></li>
+                <li><a href="#composites">Composites</a></li>
+                <li><a href="#field-functions">Field functions</a></li>
+                <li><a href="#filter-functions">Filter functions</a></li>
+                <li><a href="#response-code">Response code</a></li>
+                <li><a href="#limits">Limits</a></li>
             </ul>
         </div>
 
