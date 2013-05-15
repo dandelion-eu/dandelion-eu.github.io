@@ -8,7 +8,7 @@
     <title>dandelion docs</title>
 
     <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="styles/7792c9cc.main.css">
+    <link rel="stylesheet" href="styles/c42c1abe.main.css">
     <link rel="stylesheet" href="styles/fontawesome.css">
 
     <script src="scripts/vendor/e6903ff7.modernizr.js"></script>
@@ -139,7 +139,7 @@
                 <h3 class="api-section-title">Parameters<a class="anchor" name="parameters" href="#parameters"></a></h3>
 
                 <div class="row">
-                    <div class="large-2 columns"><h5 class="monospaced">$select</h5></div>
+                    <div class="large-2 columns"><h5 class="monospaced">$select<a class="anchor" name="parameters-select" href="#parameters-select"></a></h5></div>
                     <div class="large-10 columns">
                         <div class="row">
                             <div class="large-12 columns">
@@ -162,7 +162,7 @@
                 </div>
                 <hr>
                 <div class="row">
-                    <div class="large-2 columns"><h5 class="monospaced">$where</h5></div>
+                    <div class="large-2 columns"><h5 class="monospaced">$where<a class="anchor" name="parameters-where" href="#parameters-where"></a></h5></div>
                     <div class="large-10 columns">
                         <div class="row">
                             <div class="large-12 columns">
@@ -188,7 +188,7 @@
                 </div>
                 <hr>
                 <div class="row">
-                    <div class="large-2 columns"><h5 class="monospaced">$group</h5></div>
+                    <div class="large-2 columns"><h5 class="monospaced">$group<a class="anchor" name="parameters-group" href="#parameters-group"></a></h5></div>
                     <div class="large-10 columns">
                         <div class="row">
                             <div class="large-12 columns">
@@ -212,7 +212,7 @@
 
                 <hr>
                 <div class="row">
-                    <div class="large-2 columns"><h5 class="monospaced">$order</h5></div>
+                    <div class="large-2 columns"><h5 class="monospaced">$order<a class="anchor" name="parameters-order" href="#parameters-order"></a></h5></div>
                     <div class="large-10 columns">
                         <div class="row">
                             <div class="large-12 columns">
@@ -236,7 +236,7 @@
 
                 <hr>
                 <div class="row">
-                    <div class="large-2 columns"><h5 class="monospaced">$limit</h5></div>
+                    <div class="large-2 columns"><h5 class="monospaced">$limit<a class="anchor" name="parameters-limit" href="#parameters-limit"></a></h5></div>
                     <div class="large-10 columns">
                         <div class="row">
                             <div class="large-12 columns">
@@ -260,7 +260,7 @@
 
                 <hr>
                 <div class="row">
-                    <div class="large-2 columns"><h5 class="monospaced">$offset</h5></div>
+                    <div class="large-2 columns"><h5 class="monospaced">$offset<a class="anchor" name="parameters-offset" href="#parameters-offset"></a></h5></div>
                     <div class="large-10 columns">
                         <div class="row">
                             <div class="large-12 columns">
@@ -336,19 +336,91 @@
                         </tr>
                         <tr>
                             <td class="monospaced">sum(column)</td>
-                            <td>Aggregation function for summing (similar to <span class="monospaced">SQL SUM()</span>). It is possible to use <span class="monospaced">DISTINCT</span> to sum only distinct values. <em>Note: it works only for numeric values.</em></td>
+                            <!--<td>Aggregation function for summing (similar to <span class="monospaced">SQL SUM()</span>). It is possible to use <span class="monospaced">DISTINCT</span> to sum only distinct values. <em>Note: it works only for numeric values.</em></td>-->
+                            <td>
+                                <div class="row">
+                                    <div class="large-12 columns">
+                                        <p>
+                                            Aggregation function for summing (similar to <span class="monospaced">SQL SUM()</span>). It is possible to use <span class="monospaced">DISTINCT</span> to sum only distinct values. <em>Note: it works only for numeric values.</em>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="large-11 large-centered columns">
+                                        <div class="example-alert" data-example="sum">
+                                            <ul class="square">
+                                                <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$select</strong>=name&amp;<strong>$group</strong>=name</a></li>-->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td class="monospaced">avg(column)</td>
-                            <td>Aggregation function for calculating the average value (similar to <span class="monospaced">SQL AVG()</span>). It is possible to use <span class="monospaced">DISTINCT</span> to consider only distinct values. <em>Note: it works only for numeric values.</em></td>
+                            <!--<td>Aggregation function for calculating the average value (similar to <span class="monospaced">SQL AVG()</span>). It is possible to use <span class="monospaced">DISTINCT</span> to consider only distinct values. <em>Note: it works only for numeric values.</em></td>-->
+                            <td>
+                                <div class="row">
+                                    <div class="large-12 columns">
+                                        <p>
+                                            Aggregation function for calculating the average value (similar to <span class="monospaced">SQL AVG()</span>). It is possible to use <span class="monospaced">DISTINCT</span> to consider only distinct values. <em>Note: it works only for numeric values.</em>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="large-11 large-centered columns">
+                                        <div class="example-alert" data-example="avg">
+                                            <ul class="square">
+                                                <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$select</strong>=name&amp;<strong>$group</strong>=name</a></li>-->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td class="monospaced">min(column)</td>
-                            <td>Aggregation function for extracting the minimum value (similar to <span class="monospaced">SQL MIN()</span>).</td>
+                            <!--<td>Aggregation function for extracting the minimum value (similar to <span class="monospaced">SQL MIN()</span>).</td>-->
+                            <td>
+                                <div class="row">
+                                    <div class="large-12 columns">
+                                        <p>
+                                            Aggregation function for extracting the minimum value (similar to <span class="monospaced">SQL MIN()</span>)
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="large-11 large-centered columns">
+                                        <div class="example-alert" data-example="min">
+                                            <ul class="square">
+                                                <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$select</strong>=name&amp;<strong>$group</strong>=name</a></li>-->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td class="monospaced">max(column)</td>
-                            <td>Aggregation function for extracting the maximum value (similar to <span class="monospaced">SQL MAX()</span>).</td>
+                            <!--<td>Aggregation function for extracting the maximum value (similar to <span class="monospaced">SQL MAX()</span>).</td>-->
+                            <td>
+                                <div class="row">
+                                    <div class="large-12 columns">
+                                        <p>
+                                            Aggregation function for extracting the maximum value (similar to <span class="monospaced">SQL MAX()</span>)
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="large-11 large-centered columns">
+                                        <div class="example-alert" data-example="max">
+                                            <ul class="square">
+                                                <!--<li><a target="_blank" href="http://datamarket.spaziodati.eu/api/v1/datagem/places/data.api?$select=name,%20category">/data.api?<strong>$select</strong>=name&amp;<strong>$group</strong>=name</a></li>-->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
