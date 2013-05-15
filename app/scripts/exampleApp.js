@@ -6,7 +6,7 @@
     });
 
     window.docsApp.DocView = Backbone.View.extend({
-        exampleTemplate: '<li><a title="<%= title %>" target="_blank" href="http://datamarket.spaziodati.eu/api/v1/<%=url%>"><%= prettyUrl %></a></li>',
+        exampleTemplate: '<li><a title="<%= title %>" target="_blank" href="http://dandelion.eu/api/v1/<%=url%>"><%= prettyUrl %></a></li>',
 
         initialize: function(){
             _.bindAll(this, 'getElByTag');
