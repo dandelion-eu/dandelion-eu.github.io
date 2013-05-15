@@ -129,7 +129,7 @@
   tag:
     - where
     - starts_with
-  featured: stars_with
+  featured: starts_with
 
 - title: Query for null values
   description: Select all elements without fax
