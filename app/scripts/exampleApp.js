@@ -2,6 +2,19 @@
     "use strict";
     window.docsApp = {};
 
+    window.docsApp.fixAnchors = function(){
+        var apiSectionClass = '.anchor'
+          , exampleSelector = '.example-alert';
+        $(apiSectionClass).append('<span class="icon-link"></span>');
+        $(exampleSelector).addClass('hidden');
+    };
+
+    window.docsApp.totalSection = 0;
+    window.docsApp.sectionRender = $.Deferred()
+        .done(function(){
+            window.docsApp.fixAnchors();
+        });
+
     window.docsApp.createPrettyUrl = function(url, tags){
         var brakeChar = '&#8203;'
           , paramsRegEx = /(\$\w+)/g
@@ -13,7 +26,43 @@
         return parsedUrl;
     };
 
-    window.docsApp.Examples = Backbone.Collection.extend({
+    window.docsApp.SectionView = Backbone.View.extend({
+        template: _.template($('#api-section-template').html()),
+        initialize: function(data){
+            var that = this;
+            _.bindAll(this, 'render', 'afterRender');
+            this.sectionName = data.sectionName;
+            this.largeTitle = data.largeTitle;
+            this.render = _.wrap(this.render, function(render) {
+                render();
+                that.afterRender();
+                return that;
+            });
+        },
+        afterRender: function(){
+            window.docsApp.totalSection -= 1;
+            if (window.docsApp.totalSection <= 0)
+                window.docsApp.sectionRender.resolve();
+        },
+        render: function(){
+            var that = this;
+            _.each(this.collection.models, function(model){
+                var cleanSectionRegEx = /[\$_]/g
+                  , cleanTagRegEx = /\$/g
+                  , context = {
+                    'section': model.get('name'),
+                    'fatherSection': that.sectionName,
+                    'cleanSection': model.get('name').replace(cleanSectionRegEx, ''),
+                    'grammar': model.get('grammar'),
+                    'description': model.get('description'),
+                    'sectionTag': model.get('name').replace(cleanTagRegEx, ''),
+                    'largeTitle': that.largeTitle
+                };
+                that.$el.append(that.template(context));
+            });
+            return this;
+        }
+
     });
 
     window.docsApp.DocView = Backbone.View.extend({
