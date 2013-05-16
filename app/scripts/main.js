@@ -1,6 +1,17 @@
 (function(){
     "use strict";
 
+    $(document).on('click', 'a', function (event) {
+        var locationHost = window.location.host
+            , locationDomain = locationHost.substr(locationHost.indexOf("."))
+            , a = new RegExp('(' + locationDomain + '/|javascript:|mailto:)');
+
+        if ((this.href !== '') && (!a.test(this.href))) {
+            event.preventDefault();
+            event.stopPropagation();
+            window.open(this.href, '_blank');
+        }
+    });
 
     $.get('dataApi.yaml')
         .success(function(data){
@@ -43,4 +54,28 @@
                 });
             window.docsApp.docView.render();
         });
+
+
+    (function () {
+        var uv = document.createElement('script');
+        uv.type = 'text/javascript';
+        uv.async = true;
+        uv.src = '//widget.uservoice.com/NnWIU9R68OpZsf3hvDbjAg.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(uv, s)
+    })();
+
+    var UserVoice = window.UserVoice || [];
+    UserVoice.push(['showTab', 'classic_widget', {
+        mode: 'feedback',
+        primary_color: '#252525',
+        link_color: '#aecf42',
+        forum_id: 197822,
+        tab_label: 'Feedback',
+        tab_color: '#252525',
+        tab_position: 'middle-left',
+        tab_inverted: false
+    }]);
+
+
 })();
