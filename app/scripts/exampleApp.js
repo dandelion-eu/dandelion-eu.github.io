@@ -9,10 +9,16 @@
         $(exampleSelector).addClass('hidden');
     };
 
+    window.docsApp.checkLocationFragment = function(){
+        if ('hash' in window.location)
+            window.location.hash = window.location.hash;
+    };
+
     window.docsApp.totalSection = 0;
     window.docsApp.sectionRender = $.Deferred()
         .done(function(){
             window.docsApp.fixAnchors();
+            window.docsApp.checkLocationFragment();
         });
 
     window.docsApp.createPrettyUrl = function(url, tags){
