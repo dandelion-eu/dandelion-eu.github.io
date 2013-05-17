@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
  
+.icon-edit:before { content: '\e801'; } /* '' */
+.icon-pencil:before { content: '\e800'; } /* '' */
 .icon-docs:before { content: '\f0c5'; } /* '' */
 .icon-link:before { content: '🔗'; } /* '\1f517' */
