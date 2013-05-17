@@ -2,7 +2,7 @@
     "use strict";
     window.docsApp = {};
 
-    window.docsApp.fixAnchors = function(){
+    window.docsApp.fixPage = function(){
         var apiSectionClass = '.anchor'
           , exampleSelector = '.example-alert';
         $(apiSectionClass).append('<span class="icon-link"></span>');
@@ -20,7 +20,7 @@
     window.docsApp.totalSection = 0;
     window.docsApp.sectionRender = $.Deferred()
         .done(function(){
-            window.docsApp.fixAnchors();
+            window.docsApp.fixPage();
         });
 
     window.docsApp.createPrettyUrl = function(url, tags){

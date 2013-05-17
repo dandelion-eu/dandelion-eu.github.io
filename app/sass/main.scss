@@ -102,11 +102,11 @@ blockquote {
 }
 
 h3, h5 {
-  .icon-link {
+  [class^='icon-'] {
     display: none;
     font-size: 80%;
   }
-  &:hover .icon-link {
+  &:hover [class^='icon-'] {
     display: inline-block;
   }
 }
