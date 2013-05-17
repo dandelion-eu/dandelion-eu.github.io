@@ -10,8 +10,11 @@
     };
 
     window.docsApp.checkLocationFragment = function(){
-        if ('hash' in window.location)
-            window.location.hash = window.location.hash;
+        if ('hash' in window.location) {
+            var elementName = window.location.hash.replace('#', '')
+              , elementToScroll = document.querySelector('[name=' + elementName + ']');
+            elementToScroll.scrollIntoView();
+        }
     };
 
     window.docsApp.totalSection = 0;
