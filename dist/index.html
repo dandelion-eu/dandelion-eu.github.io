@@ -8,7 +8,7 @@
     <title>dandelion docs</title>
 
     <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="styles/1366328e.main.css">
+    <link rel="stylesheet" href="styles/83595553.main.css">
     <link rel="stylesheet" href="styles/fontawesome.css">
 
     <script src="scripts/vendor/e6903ff7.modernizr.js"></script>
@@ -45,7 +45,6 @@
     </script>
 </head>
 <body>
-
     <!-- header -->
     <nav class="top-bar">
         <ul class="title-area">
@@ -76,9 +75,15 @@
     </nav>
     <!-- end header -->
 
+    <!-- github ribbon -->
+    <a class="hide-for-small" href="https://github.com/dandelion-eu/dandelion-eu.github.io/tree/develop"><img style="position: absolute; top: 0; right: 0; border: 0" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+    <!-- end github ribbon -->
+
     <div class="row">
         <div class="large-12 columns">
-            <h1 class="docs header">Dandelion API v1.0</h1>
+            <h1 class="docs header"><a href="/">Dandelion API v1.0</a></h1>
+            <h6 class="docs subheader hide-for-medium-up"> <a href="https://github.com/dandelion-eu/dandelion-eu.github.io/tree/develop">Fork me on GitHub</a></h6>
+
             <hr>
         </div>
     </div>
@@ -89,7 +94,7 @@
         <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
         <div class="large-10 push-2 columns">
             <div class="row">
-                <div class="small-12">
+                <div class="small-12 columns">
                     <h2>Read API</h2>
 
                     <p>
@@ -102,9 +107,8 @@
 
             <!-- Endpoint section -->
             <div class="row api-section">
-                <div class="small-12">
+                <div class="small-12 columns">
                     <h3 class="api-section-title">API endpoint<a class="anchor" name="api-endpoint" href="#api-endpoint"></a></h3>
-                    <!--<pre class="prettyprint">/api/v1/datagem/{datagemID}/data.{output format}</pre>-->
                     <pre class="panel">/api/&#8203;v1/&#8203;datagem/&#8203;{datagemId|datagemSlug}/&#8203;data.{outputFormat}</pre>
                     <p>You can obtain the datagem ID by clicking on the "Get API" button on the datagem page.</p>
                 </div>
@@ -114,7 +118,7 @@
 
             <!-- Output format section -->
             <div class="row api-section">
-                <div class="small-12">
+                <div class="small-12 columns">
                     <h3 class="api-section-title">Output format<a class="anchor" name="output-format" href="#output-format"></a></h3>
                     <table>
                         <thead>
@@ -139,14 +143,17 @@
             <!-- End of output format section -->
 
             <!-- Parameters section -->
-            <div class="row api-section" id="auto-parameters">
-                <h3 class="api-section-title">Parameters<a class="anchor" name="parameters" href="#parameters"></a></h3>
+            <!-- To edit this section content go to the dataAPI.yaml -->
+            <div class="row api-section">
+                <div class="large-12 columns" id="auto-parameters">
+                    <h3 class="api-section-title">Parameters<a class="anchor" name="parameters" href="#parameters"></a></h3>
+                </div>
             </div>
             <!-- End of parameters section -->
 
             <!-- Composites section -->
             <div class="row api-section">
-                <div class="large-12">
+                <div class="large-12 columns">
                     <h3 class="api-section-title">Composites<a class="anchor" name="composites" href="#composites"></a></h3>
                     <p>Some datagem fields contain more than one value. For example in the Places datagem the municipality field contains both the name and the acheneID of the municipality. We call these fields <strong>composites</strong>. "municipality" is the <strong>composite root</strong>, while "name" and "acheneID" are called <strong>composite fields</strong>.</p>
 
@@ -158,9 +165,9 @@
             <!-- End of composites section -->
 
             <!-- Field function section -->
-
+            <!-- To edit this section content go to the dataAPI.yaml -->
             <div class="row api-section">
-                <div class="large-12" id="auto-fieldFunctions">
+                <div class="large-12 columns" id="auto-fieldFunctions">
                     <h3 class="api-section-title">Field functions<a class="anchor" name="field-functions" href="#field-functions"></a></h3>
                     <blockquote>Note that field functions produce new columns with their result. The column name is arbitrary set by the API but it is possible to set a custom name by using the <span class="monospaced">AS</span> keyword</blockquote>
                 </div>
@@ -168,8 +175,9 @@
             <!-- End of field function section -->
 
             <!-- Filter function section -->
+            <!-- To edit this section content go to the dataAPI.yaml -->
             <div class="row api-section">
-                <div class="large-12" id="auto-filterFunctions">
+                <div class="large-12 columns" id="auto-filterFunctions">
                     <h3 class="api-section-title">Filter functions<a class="anchor" name="filter-functions" href="#filter-functions"></a></h3>
                 </div>
             </div>
@@ -177,7 +185,7 @@
 
             <!-- Response section -->
             <div class="row api-section">
-                <div class="large-12">
+                <div class="large-12 columns">
                     <h3 class="api-section-title">Response Code<a class="anchor" name="response-code" href="#response-code"></a></h3>
 
                     <table>
@@ -238,7 +246,7 @@
 
             <!-- Limits section -->
             <div class="row api-section">
-                <div class="large-12">
+                <div class="large-12 columns">
                     <h3 class="api-section-title">Limits<a class="anchor" name="limits" href="#limits"></a></h3>
                     <p>The V1 API have no specified requests limit. You are nonetheless invited to throttle your requests so that the service remains responsive for everyone. Anyway there’s a limit on the number of maximum elements that an API response can return, currently set to 100000. Please use pagination if you need to retrieve more elements.</p>
                 </div>
@@ -258,6 +266,9 @@
                 <li><a href="#filter-functions">Filter functions</a></li>
                 <li><a href="#response-code">Response code</a></li>
                 <li><a href="#limits">Limits</a></li>
+                <li class="divider"></li>
+                <li><a href="https://github.com/dandelion-eu/dandelion-eu.github.io/blob/develop/app/index.html">Show on Github</a></li>
+                <li><a href="https://github.com/dandelion-eu/dandelion-eu.github.io/edit/develop/app/index.html">Edit on Github </a></li>
             </ul>
         </div>
 
@@ -294,7 +305,7 @@
 
     <script src="scripts/ba7af852.libray.js"></script>
 
-    <script src="scripts/c86c13b0.main.js"></script>
+    <script src="scripts/be914877.main.js"></script>
   <script>
     $(document).foundation();
 
