@@ -21,7 +21,6 @@
     window.docsApp.sectionRender = $.Deferred()
         .done(function(){
             window.docsApp.fixAnchors();
-            window.docsApp.checkLocationFragment();
         });
 
     window.docsApp.createPrettyUrl = function(url, tags){
@@ -78,12 +77,25 @@
         exampleTemplate: '<li><a class="example-link" title="<%= title %>" target="_blank" href="http://dandelion.eu/api/v1/<%=url%>"><%= prettyUrl %></a></li>',
 
         initialize: function(){
-            _.bindAll(this, 'getElByTag');
+            var that = this;
+
+            _.bindAll(this, 'getElByTag', 'render', 'afterRender');
+
             this.exampleContainer = '.example-alert';
             this.examples = this.$el.find(this.exampleContainer);
             this.allTags = $.map(this.examples, function(el){
                 return $(el).data('example');
             });
+
+            this.render = _.wrap(this.render, function(render) {
+                render();
+                that.afterRender();
+                return that;
+            });
+        },
+
+        afterRender: function(){
+            window.docsApp.checkLocationFragment();
         },
 
         getElByTag: function(tag){
