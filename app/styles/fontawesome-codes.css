@@ -3,5 +3,7 @@
  
 .icon-edit:before { content: '\e801'; } /* '' */
 .icon-pencil:before { content: '\e800'; } /* '' */
+.icon-tag:before { content: '\e802'; } /* '' */
+.icon-tags:before { content: '\e803'; } /* '' */
 .icon-docs:before { content: '\f0c5'; } /* '' */
 .icon-link:before { content: '🔗'; } /* '\1f517' */

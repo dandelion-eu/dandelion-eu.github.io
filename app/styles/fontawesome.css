@@ -2,11 +2,11 @@
 
  @font-face {
   font-family: 'fontawesome';
-  src: url('fonts/fontawesome.eot?23328431');
-  src: url('fonts/fontawesome.eot?23328431#iefix') format('embedded-opentype'),
-       url('fonts/fontawesome.woff?23328431') format('woff'),
-       url('fonts/fontawesome.ttf?23328431') format('truetype'),
-       url('fonts/fontawesome.svg?23328431#fontawesome') format('svg');
+  src: url('fonts/fontawesome.eot?30035427');
+  src: url('fonts/fontawesome.eot?30035427#iefix') format('embedded-opentype'),
+       url('fonts/fontawesome.woff?30035427') format('woff'),
+       url('fonts/fontawesome.svg?30035427#fontawesome') format('svg');
+       url('fonts/fontawesome.ttf?30035427') format('truetype'),
   font-weight: normal;
   font-style: normal;
 }
@@ -16,7 +16,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontawesome';
-    src: url('../font/fontawesome.svg?23328431#fontawesome') format('svg');
+    src: url('../font/fontawesome.svg?30035427#fontawesome') format('svg');
   }
 }
 */
@@ -41,7 +41,7 @@
   /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
  
-  /* Animation center compensation - magrins should be symmetric */
+  /* Animation center compensation - margins should be symmetric */
   /* remove if not needed */
   margin-left: .2em;
  
@@ -54,5 +54,7 @@
  
 .icon-edit:before { content: '\e801'; } /* '' */
 .icon-pencil:before { content: '\e800'; } /* '' */
+.icon-tag:before { content: '\e802'; } /* '' */
+.icon-tags:before { content: '\e803'; } /* '' */
 .icon-docs:before { content: '\f0c5'; } /* '' */
 .icon-link:before { content: '🔗'; } /* '\1f517' */
