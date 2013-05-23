@@ -9,7 +9,7 @@
       '<a class="example-link example-url" target="_blank" href="http://dandelion.eu/api/v1/<%= url %>"><%= url_name %></a>' +
       '<p class="small text-right"><i class="icon-tags"></i> ' +
       '<% for(i in tags) { %>' +
-      '<span class="filter-tag" data-tag="<%= tags[i] %>"><%= tags[i] %></span> ' +
+      '<% if(i != 0) { %>, <% } %><span class="filter-tag" data-tag="<%= tags[i] %>"><%= tags[i] %></span>' +
       '<% } %>' +
       '</p>' +
       '<div>',
