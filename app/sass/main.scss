@@ -56,7 +56,7 @@ $gray: #ddd;
   padding-top: emCalc(16px);
 
   &:before {
-    content: "url";
+    content: "example";
     display: block;
     position: absolute;
     top: emCalc(4px);
@@ -79,7 +79,6 @@ $gray: #ddd;
 .example-alert {
   @include alert-style(white);
   &:before {
-    content: "example";
     color: $gray;
   }
 }
@@ -90,6 +89,13 @@ $gray: #ddd;
 
 .panel.white {
   @include panel(#fff);
+
+  a {
+    color: #2ba6cb;
+    &:hover {
+      color: #2795b6;
+    }
+  }
 }
 
 .grammar-panel {

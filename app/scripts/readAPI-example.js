@@ -6,7 +6,7 @@
     exampleTemplate: '<div class="panel white">' +
       '<h4><%= title %></h4>' +
       '<p><%= description %></p>' +
-      '<a class="example-link example-url" href="<%= url %>"><%= url_name %></a>' +
+      '<a class="example-link example-url" target="_blank" href="http://dandelion.eu/api/v1/<%= url %>"><%= url_name %></a>' +
       '<p class="small text-right"><i class="icon-tags"></i> <%= tags.join(", ") %></p>' +
       '<div>',
 
