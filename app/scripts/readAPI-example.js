@@ -7,7 +7,11 @@
       '<h4><%= title %></h4>' +
       '<p><%= description %></p>' +
       '<a class="example-link example-url" target="_blank" href="http://dandelion.eu/api/v1/<%= url %>"><%= url_name %></a>' +
-      '<p class="small text-right"><i class="icon-tags"></i> <%= tags.join(", ") %></p>' +
+      '<p class="small text-right"><i class="icon-tags"></i> ' +
+      '<% for(i in tags) { %>' +
+      '<span class="filter-tag" data-tag="<%= tags[i] %>"><%= tags[i] %></span>, ' +
+      '<% } %>' +
+      '</p>' +
       '<div>',
 
     initialize: function () {
@@ -16,7 +20,12 @@
     },
 
     events: {
-      'update': 'update'
+      'update': 'update',
+      'click .filter-tag': 'updateFilter'
+    },
+
+    updateFilter: function (e) {
+      window.docsApp.filterView.select($(e.target).data('tag'));
     },
 
     render: function () {
@@ -76,7 +85,12 @@
     },
 
     events: {
-      'change input': 'change'
+      'change input': 'change',
+      'select': 'select'
+    },
+
+    select: function (tag) {
+      $('#' + tag).parent().click();
     },
 
     change: function (e) {
@@ -106,7 +120,7 @@
       collection: window.docsApp.examples
     });
 
-    new window.docsApp.FilterView({
+    window.docsApp.filterView = new window.docsApp.FilterView({
       collection: window.docsApp.examples
     });
 
