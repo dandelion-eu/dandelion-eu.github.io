@@ -41,7 +41,8 @@
 
       _.each(collection, function (el) {
         var tags = el.get('tags')
-          , data = {'url_name': window.docsApp.createPrettyUrl(el.get('url'), tags)};
+          , data = {'url_name': window.docsApp.createPrettyUrl(el.get('url'), tags),
+                    'url': encodeURI(el.get('url'))};
 
         that.$el.append(
           _.template(that.exampleTemplate, $.extend(el.toJSON(), data))
