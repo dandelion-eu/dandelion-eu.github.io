@@ -85,7 +85,11 @@
 
     <div class="row">
         <div class="large-12 columns">
-            <h1 class="docs header"><a href="/">Read API v1.0</a></h1>
+            <h1 class="docs header"><a href="/">Data API v1.0</a>
+                <a class="right" href="/dataAPIExamples.html"><small>examples</small></a>
+
+            </h1>
+
             <h6 class="docs subheader hide-for-medium-up"> <a href="https://github.com/dandelion-eu/dandelion-eu.github.io/tree/develop">Fork me on GitHub</a></h6>
         </div>
         <hr>
@@ -96,6 +100,12 @@
         <!-- Main Content Section -->
         <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
         <div class="large-10 push-2 columns">
+
+            <ul class="breadcrumbs">
+                <li><a href="/">Home</a></li>
+                <li class="current"><a href="#">Read API</a></li>
+            </ul>
+
             <div class="row">
                 <div class="small-12 columns">
                     <p>
@@ -267,9 +277,11 @@
 
         <!-- Nav Sidebar -->
         <div class="large-2 pull-10 columns hide-for-small">
-            <h6 class="docs show-for-medium-up"><a href="/dataAPIExamples.html" class="button expand" style="margin-bottom: 0">examples</a></h6>
+            <!--<h6 class="docs show-for-medium-up"><a href="/dataAPIExamples.html" class="button expand" style="margin-bottom: 0">examples</a></h6>-->
 
-            <ul class="side-nav">
+            <ul class="side-nav" style="padding-top:0">
+                <li><a href="/dataAPIExamples.html"><strong>Examples</strong></a></li>
+                <li class="divider"></li>
                 <li><a href="#api-endpoint">Endpoint</a></li>
                 <li><a href="#output-format">Output format</a></li>
                 <li><a href="#case-sensitivity">Case sensitivity</a></li>
