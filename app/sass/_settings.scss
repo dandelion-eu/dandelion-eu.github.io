@@ -465,16 +465,20 @@ $em-base: 16px !default;
 // Background color for the breadcrumb container.
 
 // $crumb-bg: lighten($secondary-color, 5%);
+$crumb-bg: white;
 
 // Padding around the breadcrumbs.
 
 // $crumb-padding: emCalc(6px) emCalc(14px) emCalc(9px);
-// $crumb-side-padding: emCalc(12px);
+$crumb-side-padding: emCalc(12px);
+$crumb-padding: 0;
+//$crumb-side-padding: 0;
 
 // Border styles.
 
 // $crumb-function-factor: 10%;
 // $crumb-border-size: 1px;
+$crumb-border-size: 0;
 // $crumb-border-style: solid;
 // $crumb-border-color: darken($crumb-bg, $crumb-function-factor);
 // $crumb-radius: $global-radius;

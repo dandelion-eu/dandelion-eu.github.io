@@ -49,7 +49,7 @@
 <div class="row">
     <div class="large-12 columns">
         <h1 class="docs header">
-            <a href="#">Places datagem</a>
+            <a href="#">Page Title</a>
         </h1>
         <h6 class="docs subheader hide-for-medium-up">
             <a href="https://github.com/dandelion-eu/dandelion-eu.github.io/tree/develop">Fork me on GitHub</a>
@@ -62,46 +62,33 @@
 
     <!-- Main Content Section -->
     <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
-    <div class="row">
-        <div class="large-5 columns">
-            <ul class="breadcrumbs">
-                <li><a href="/">Home</a></li>
-                <li class="current"><a href="#">Places datagem</a></li>
-            </ul>
-        </div>
+    <!--<div class="large-9 push-3 columns">-->
+    <div class="large-9 columns">
+        <ul class="breadcrumbs">
+            <li><a href="/">Home</a></li>
+            <li class="current"><a href="#">CurrentPage</a></li>
+        </ul>
+
+        <table style="width:100%;">
+            <thead>
+            <tr>
+                <th width="100">Field</th>
+                <th width="100">Type</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody id="tbody-datagem">
+
+            </tbody>
+        </table>
     </div>
 
-    <!--Nav Sidebar -->
+    <!-- Nav Sidebar -->
     <!--<div class="large-3 pull-9 columns">-->
     <!--</div>-->
 
-    <div class="row">
-        <div class="large-12 columns">
-            <div>
-                Tens of thousand of places in Italy from OpenStreetmap, Wikipedia, Geonames and our partners.
-            </div>
-
-            <table class="datagem-schema-table">
-                <thead>
-                <tr>
-                    <th width="150">Field</th>
-                    <th width="150">Type</th>
-                    <th>Description</th>
-                </tr>
-                </thead>
-                <tbody id="tbody-datagem">
-                <tr><td colspan="3"><table>
-                    <tr><td>name</td><td>int</td><td>description</td></tr>
-                    <tr><td>namea/td><td>int</td><td>description</td></tr>
-                    <tr><td>nameb</td><td>int</td><td>description</td></tr>
-                </table></td></tr>
-                </tbody>
-            </table>
-        </div>
-
-    </div>
-
     <!-- Footer -->
+
     <footer class="row">
         <div class="large-12 columns">
             <hr />
@@ -161,8 +148,7 @@
 
     <script>
         (function(){
-            new window.docsApp.Datagem('places', 'schema').loadSchema();
-
+            window.docsApp.datagem.loadSchema('administrative-regions', 'schema')
         })();
     </script>
 
