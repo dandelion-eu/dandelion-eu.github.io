@@ -97,6 +97,70 @@
 
     </div>
 
+    <hr/>
+
+    <div class="row">
+        <div class="large-12 columns">
+            <h4 id="geometry-provenance">Geometry Provenance</h4>
+
+            <table class="large-12">
+                <thead>
+                <tr>
+                    <th>Value</th>
+                    <th>Provenance</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>0</td>
+                    <td><strong>Original Source</strong></td>
+                    <td>the geometry comes directly from the original source, and has not been edited by SpazioDati or anyone</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><strong>SpazioDati</strong></td>
+                    <td>the geometry has been inferred by SpazioDati from other fields, such as the locality / municipality</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><strong>Geocoded</strong></td>
+                    <td>the geometry has been geocoded from an address</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h4 id="levels">Geometry Accuracy</h4>
+            <p>This table extends the "Levels" one in the of the <a href="datagemsEurogeo.html#levels">Eurogeo</a> dataset</p>
+            <table class="large-12">
+                <thead>
+                <tr>
+                    <th>Value</th>
+                    <th>Level</th>
+                    <th>Example</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>80</td>
+                    <td>Street</td>
+                    <td>Via del Brennero</td>
+                </tr>
+                <tr>
+                    <td>90</td>
+                    <td>Address</td>
+                    <td>Via del Brennero, 52</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>Point</td>
+                    <td>46.0767816,11.1237976</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="row">
         <div class="large-12 columns">

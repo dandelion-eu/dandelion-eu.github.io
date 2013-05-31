@@ -90,4 +90,18 @@ locality:
       description: name of the locality
 
 geometry:
-  description: coordinates of the place
+  description: lat/lon coordinates of the place
+
+geomPoint:
+  description: information about the quality of the geometry
+  subfields:
+    provenance:
+      description:
+        tells whether the geometry has been geocoded or comes directly from a trusted source;
+        see the <a href="#geometry-provenance">Geometry Provenance</a> table below
+    accuracy:
+      description:
+        quality of the geometry; this field is usually informative only when the geometry was
+        geocoded, otherwise the quality is assumed to be maximum, trusting the source completely;
+        the possible values are the same as the "level" field in the <a href="datagemsEurogeo.html">Eurogeo</a>
+        dataset and extends it; see the <a href="#levels">Levels</a> table below
