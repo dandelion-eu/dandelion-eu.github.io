@@ -1,2 +1,81 @@
-website:
-  description: bla bla bla
+datagems:
+  places_taxonomy:  &places_taxonomy
+    label: Places Taxonomy
+    uri: /datagemsPlacesTaxonomy.html
+
+  places:  &places
+    label: Places
+    uri: /datagemsPlaces.html
+
+  eurogeo:  &eurogeo
+    label: Eurogeo
+    uri: /datagemsEurogeo.html
+
+acheneID:
+  description: unique ID on dandelion
+
+category:
+  subfields:
+    acheneID:
+      description: unique ID on dandelion of the category
+      links_to: *places_taxonomy
+    label:
+      description: name of the exact category the place is in
+    pathAchenes:
+      description:
+        an array of acheneIDs, pointing to the full path of categories the place is in.
+        The first acheneID will always be the root of the Places Taxonomy, the last will always be
+        the same value of category.acheneID
+      links_to: *places_taxonomy
+    pathLabels:
+      description:
+        ad array of labels of the categories the place is in, as described in category.pathAchenes
+
+name:
+  description: the name of the place
+  example: SpazioDati s.r.l.
+
+municipality:
+  description: municipality (eurogeo level 60) the place is in
+  subfields:
+    acheneID:
+      description: unique ID on dandelion of the municipality
+      links_to: *eurogeo
+    name:
+      description: name of the municipality
+
+province:
+  description: province (eurogeo level 50) the place is in
+  subfields:
+    acheneID:
+      description: unique ID on dandelion of the province
+      links_to: *eurogeo
+    name:
+      description: name of the province
+
+region:
+  description: region (eurogeo level 40) the place is in
+  subfields:
+    acheneID:
+      description: unique ID on dandelion of the region
+      links_to: *eurogeo
+    name:
+      description: name of the region
+
+macroregion:
+  description: macroregion (eurogeo level 30) the place is in
+  subfields:
+    acheneID:
+      description: unique ID on dandelion of the macroregion
+      links_to: *eurogeo
+    name:
+      description: name of the macroregion
+
+country:
+  description: country (eurogeo level 20) the place is in
+  subfields:
+    acheneID:
+      description: unique ID on dandelion of the country
+      links_to: *eurogeo
+    name:
+      description: name of the country
