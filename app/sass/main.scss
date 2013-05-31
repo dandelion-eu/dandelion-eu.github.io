@@ -141,7 +141,21 @@ p.small {
   color: #2795b6;
   cursor: pointer;
 }
+
 .datagem-schema-table {
-  width:100%;
+  width: 100%;
   margin-top: emCalc(20px);
+}
+
+table.no-zebra tbody tr {
+  background: white;
+  border-top: 1px solid gainsboro;
+}
+
+table tbody tr.color {
+  background: #f4f4f4;
+  &.child {
+    background: #f9f9f9;
+    border: 0;
+  }
 }

@@ -1,10 +1,10 @@
 (function(){
 
     var Datagem = function(datagem, api){
-        this.fieldTemplate = _.template('<tr><td><%= field %></td><td><%= type %></td><td><%= doc %></td><td><%= example %></td></tr>');
+        this.fieldTemplate = _.template('<tr class="<% if(type==\"Composite\") { %>color<% } %>"><td><%= field %></td><td><%= type %></td><td><%= doc %></td><td><%= example %></td></tr>');
         this.subfieldTemplate = _.template(
-          '<tr>' +
-            '<td>↳ <%= field %></td>' +
+          '<tr class="color child">' +
+            '<td><%= field %></td>' +
             '<td><%= type %></td>' +
             '<td>' +
               '<%= doc %>' +
