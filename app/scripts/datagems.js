@@ -1,9 +1,19 @@
 (function(){
 
     var Datagem = function(datagem, api){
-        this.fieldTemplate = _.template('<tr><td><%= field %></td><td><%= type %></td><td><%= doc %></td><td></td><td><%= example %></td></tr>');
+        this.fieldTemplate = _.template('<tr><td><%= field %></td><td><%= type %></td><td><%= doc %></td><td><%= example %></td></tr>');
         this.subfieldTemplate = _.template(
-          '<tr><td>↳ <%= field %></td><td><%= type %></td><td><%= doc %></td><td><a href="<%= links_to.uri %>"><%= links_to.label %></a></td><td><%= example %></td></tr>'
+          '<tr>' +
+            '<td>↳ <%= field %></td>' +
+            '<td><%= type %></td>' +
+            '<td>' +
+              '<%= doc %>' +
+              '<% if (links_to) { %>' +
+                ' — links to <a href="<%= links_to.uri %>"><%= links_to.label %></a>' +
+              '<% } %>' +
+            '</td>' +
+            '<td><%= example %></td>' +
+          '</tr>'
         );
         this.datagem = datagem;
         this.api = api;

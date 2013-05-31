@@ -35,32 +35,14 @@ name:
   description: the name of the place
   example: SpazioDati s.r.l.
 
-municipality:
-  description: municipality (eurogeo level 60) the place is in
+country:
+  description: country (eurogeo level 20) the place is in
   subfields:
     acheneID:
-      description: unique ID on dandelion of the municipality
+      description: unique ID on dandelion of the country
       links_to: *eurogeo
     name:
-      description: name of the municipality
-
-province:
-  description: province (eurogeo level 50) the place is in
-  subfields:
-    acheneID:
-      description: unique ID on dandelion of the province
-      links_to: *eurogeo
-    name:
-      description: name of the province
-
-region:
-  description: region (eurogeo level 40) the place is in
-  subfields:
-    acheneID:
-      description: unique ID on dandelion of the region
-      links_to: *eurogeo
-    name:
-      description: name of the region
+      description: name of the country
 
 macroregion:
   description: macroregion (eurogeo level 30) the place is in
@@ -71,11 +53,41 @@ macroregion:
     name:
       description: name of the macroregion
 
-country:
-  description: country (eurogeo level 20) the place is in
+region:
+  description: region (eurogeo level 40) the place is in
   subfields:
     acheneID:
-      description: unique ID on dandelion of the country
+      description: unique ID on dandelion of the region
       links_to: *eurogeo
     name:
-      description: name of the country
+      description: name of the region
+
+province:
+  description: province (eurogeo level 50) the place is in
+  subfields:
+    acheneID:
+      description: unique ID on dandelion of the province
+      links_to: *eurogeo
+    name:
+      description: name of the province
+
+municipality:
+  description: municipality (eurogeo level 60) the place is in
+  subfields:
+    acheneID:
+      description: unique ID on dandelion of the municipality
+      links_to: *eurogeo
+    name:
+      description: name of the municipality
+
+locality:
+  description: locality (eurogeo level 70) the place is in
+  subfields:
+    acheneID:
+      description: unique ID on dandelion of the locality
+      links_to: *eurogeo
+    name:
+      description: name of the locality
+
+geometry:
+  description: coordinates of the place
