@@ -150,12 +150,17 @@ p.small {
 table.no-zebra tbody tr {
   background: white;
   border-top: 1px solid gainsboro;
-}
 
-table tbody tr.color {
-  background: #f4f4f4;
-  &.child {
+  &.color {
     background: #f9f9f9;
+  }
+
+  &.child {
     border: 0;
+  }
+
+  td {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }

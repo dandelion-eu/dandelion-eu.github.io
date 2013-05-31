@@ -1,9 +1,9 @@
 (function(){
 
     var Datagem = function(datagem, api){
-        this.fieldTemplate = _.template('<tr class="<% if(type==\"Composite\") { %>color<% } %>"><td><%= field %></td><td><%= type %></td><td><%= doc %></td><td><%= example %></td></tr>');
+        this.fieldTemplate = _.template('<tr class="<%= index%2==0 ? \"\" : \"color\" %>"><td><%= field %></td><td><%= type %></td><td><%= doc %></td><td><%= example %></td></tr>');
         this.subfieldTemplate = _.template(
-          '<tr class="color child">' +
+          '<tr class="<%= parent%2==0 ? \"\" : \"color\" %> child">' +
             '<td><%= field %></td>' +
             '<td><%= type %></td>' +
             '<td>' +
@@ -32,13 +32,14 @@
                 .sortBy(function(key){
                   var idx = _.indexOf(Object.keys(parsedData), key);
                   return (idx != -1) ? idx : 9999;
-                }).each(function(key) {
+                }).each(function(key, index) {
                     var val = data[key];
                     $table.append(that.fieldTemplate({
                         field: key,
                         type: _.isObject(val) ? 'Composite' : val,
                         doc: key in parsedData ? parsedData[key]['description'] : '',
-                        example: key in parsedData ? parsedData[key]['example'] : ''
+                        example: key in parsedData ? parsedData[key]['example'] : '',
+                        index: index
                     }));
 
                     if (_.isObject(val)) {
@@ -53,7 +54,8 @@
                                 type: sub_val,
                                 doc: sub_key in subfields ? subfields[sub_key]['description'] : '',
                                 links_to: sub_key in subfields && subfields[sub_key]['links_to'] ? subfields[sub_key]['links_to'] : '',
-                                example: sub_key in subfields ? subfields[sub_key]['example'] : ''
+                                example: sub_key in subfields ? subfields[sub_key]['example'] : '',
+                                parent: index
                             }));
                         });
                     }
