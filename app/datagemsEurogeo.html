@@ -36,7 +36,7 @@
     <section class="top-bar-section hide-for-medium-up">
         <!-- Right Nav Section -->
         <ul class="right">
-            <li><a href="#">Title</a></li>
+            <li><a href="#">Eurogeo datagem</a></li>
         </ul>
     </section>
 </nav>
@@ -49,7 +49,7 @@
 <div class="row">
     <div class="large-12 columns">
         <h1 class="docs header">
-            <a href="#">Page Title</a>
+            <a href="#">Eurogeo datagem</a>
         </h1>
         <h6 class="docs subheader hide-for-medium-up">
             <a href="https://github.com/dandelion-eu/dandelion-eu.github.io/tree/develop">Fork me on GitHub</a>
@@ -60,27 +60,35 @@
 
 <div id="doc-section" class="row">
 
-    <!-- Main Content Section -->
-    <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
-    <!--<div class="large-9 push-3 columns">-->
-    <div class="large-9 columns">
-        <ul class="breadcrumbs">
-            <li><a href="/">Home</a></li>
-            <li class="current"><a href="#">CurrentPage</a></li>
-        </ul>
+    <div class="row">
+        <div class="large-5 columns">
+            <ul class="breadcrumbs">
+                <li><a href="/">Home</a></li>
+                <li class="current"><a href="#">Eurogeo datagem</a></li>
+            </ul>
+        </div>
+    </div>
 
-        <table style="width:100%;">
-            <thead>
-            <tr>
-                <th width="100">Field</th>
-                <th width="100">Type</th>
-                <th>Description</th>
-            </tr>
-            </thead>
-            <tbody id="tbody-datagem">
+    <div class="row">
+        <div class="large-12 columns">
+            <div>
+                A easy-to-use API with administrative & geo relations of countries, cities & regions in Europe from trusted, official sources.
+            </div>
 
-            </tbody>
-        </table>
+            <table class="datagem-schema-table no-zebra">
+                <thead>
+                <tr>
+                        <th width="200">Field</th>
+                        <th width="100">Type</th>
+                        <th>Description</th>
+                        <th width="150">Example</th>
+                </tr>
+                </thead>
+                <tbody id="tbody-datagem">
+
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <hr/>
@@ -202,7 +210,8 @@
 
     <script>
         (function(){
-            window.docsApp.datagem.loadSchema('administrative-regions', 'schema')
+            window.docsApp.datagem('administrative-regions', 'schema').loadSchema()
+
         })();
     </script>
 
