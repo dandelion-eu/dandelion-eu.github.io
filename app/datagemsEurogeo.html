@@ -142,6 +142,30 @@
                 </tr>
                 </tbody>
             </table>
+
+            <h4 id="isMountainMunicipality">isMountainMunicipality Values</h4>
+            <table class="large-12">
+                <thead>
+                <tr>
+                    <th>Value</th>
+                    <th>description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>NM</td>
+                    <td>Non-Mountainous</td>
+                </tr>
+                <tr>
+                    <td>P</td>
+                    <td>Partially mountainous</td>
+                </tr>
+                <tr>
+                    <td>T</td>
+                    <td>Totally mountainous</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
@@ -210,7 +234,7 @@
 
     <script>
         (function(){
-            new window.docsApp.Datagem('administrative-regions', 'schema').loadSchema()
+            new window.docsApp.Datagem('administrative-regions', 'schema', 'eurogeo').loadSchema()
         })();
     </script>
 

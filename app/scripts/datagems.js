@@ -1,6 +1,6 @@
 (function(){
 
-    var Datagem = function(datagem, api){
+    var Datagem = function(datagem, api, yamlPrefix){
         this.fieldTemplate = _.template('<tr class="<%= index%2==0 ? \"\" : \"color\" %>"><td><%= field %></td><td><%= type %></td><td><%= doc %></td><td><%= example %></td></tr>');
         this.subfieldTemplate = _.template(
           '<tr class="<%= parent%2==0 ? \"\" : \"color\" %> child">' +
@@ -16,6 +16,7 @@
           '</tr>'
         );
         this.datagem = datagem;
+        this.yamlPrefix = yamlPrefix || this.datagem;
         this.api = api;
 
         return this;
@@ -24,7 +25,7 @@
     Datagem.prototype.schemaCallback = function(data) {
         var that = this
           , $table = $('#tbody-datagem')
-          , yamlFile = this.datagem + 'Docs.yaml';
+          , yamlFile = this.yamlPrefix + 'Docs.yaml';
 
         $.get(yamlFile).success(function (yamlData) {
             var parsedData = jsyaml.load(yamlData) || {};
@@ -65,7 +66,7 @@
 
     Datagem.prototype.loadSchema = function() {
         var that = this
-          , apiUrl = 'http://localhost:8000/api/v1/datagem/' + this.datagem + '/' + this.api + '.json';
+          , apiUrl = 'http://datamarket.spaziodati.eu/api/v1/datagem/' + this.datagem + '/' + this.api + '.json';
 
         $.ajax({
             url: apiUrl,

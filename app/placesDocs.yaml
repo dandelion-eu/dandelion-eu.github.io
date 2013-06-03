@@ -22,26 +22,26 @@ category:
       links_to: *places_taxonomy
       example: http://dandelion.eu/resource/0f1f3e...
     label:
-      description: name of the exact category the place is in
+      description: name of the exact category the place belongs
       example: IT services
     pathAchenes:
       description:
-        an array of acheneIDs, pointing to the full path of categories the place is in.
+        an array of acheneIDs, pointing to the full path of categories the place belongs.
         The first acheneID will always be the root of the Places Taxonomy, the last will always be
         the same value of category.acheneID
       links_to: *places_taxonomy
-      example: "[http://dandelion.eu/resource/520910..., http://dandelion.eu/resource/f84072..., http://dandelion.eu/resource/0f1f3e...]"
+      example: "[\"http://dandelion.eu/resource/520910...\", \"http://dandelion.eu/resource/f84072...\", \"http://dandelion.eu/resource/0f1f3e...\"]"
     pathLabels:
       description:
-        ad array of labels of the categories the place is in, as described in category.pathAchenes
-      example: "[Point of interest, Services and supplies, IT services]"
+        an array of labels of the categories the place belongs, as described in category.pathAchenes
+      example: "[\"Point of interest\", \"Services and supplies\", \"IT services\"]"
 
 name:
   description: the name of the place
   example: SpazioDati s.r.l.
 
 country:
-  description: country (eurogeo level 20) the place is in
+  description: country (eurogeo level 20) the place belongs
   subfields:
     acheneID:
       description: unique ID on dandelion of the country
@@ -52,7 +52,7 @@ country:
       example: ITALIA
 
 macroregion:
-  description: macroregion (eurogeo level 30) the place is in
+  description: macroregion (eurogeo level 30) the place belongs
   subfields:
     acheneID:
       description: unique ID on dandelion of the macroregion
@@ -63,7 +63,7 @@ macroregion:
       example: NORD-EST
 
 region:
-  description: region (eurogeo level 40) the place is in
+  description: region (eurogeo level 40) the place belongs
   subfields:
     acheneID:
       description: unique ID on dandelion of the region
@@ -74,7 +74,7 @@ region:
       example: Trentino-Alto Adige/Südtirol
 
 province:
-  description: province (eurogeo level 50) the place is in
+  description: province (eurogeo level 50) the place belongs
   subfields:
     acheneID:
       description: unique ID on dandelion of the province
@@ -85,7 +85,7 @@ province:
       example: Trento
 
 municipality:
-  description: municipality (eurogeo level 60) the place is in
+  description: municipality (eurogeo level 60) the place belongs
   subfields:
     acheneID:
       description: unique ID on dandelion of the municipality
@@ -96,7 +96,7 @@ municipality:
       example: Trento
 
 locality:
-  description: locality (eurogeo level 70) the place is in
+  description: locality (eurogeo level 70) the place belongs
   subfields:
     acheneID:
       description: unique ID on dandelion of the locality
@@ -120,11 +120,11 @@ website:
 
 tel:
   description: phone number of the place
-  example: null
+  example: "null"
 
 fax:
   description: fax number of the place
-  example: null
+  example: "null"
 
 email:
   description: email address of the place
@@ -135,7 +135,7 @@ description:
   example: "By leveraging Big Data & Semantic Web technologies, SpazioDati develops ..."
 
 geometry:
-  description: lat/lon coordinates of the place
+  description: lat/lon coordinates of the place, compatible with the geojson definition
   example: "{\"type\": \"Point\", \"coordinates\": [11.124032,46.076791]}"
 
 geomPoint:
@@ -156,4 +156,4 @@ geomPoint:
 
 provenance:
   description: list of strings, representing from where the place information has been taken
-  example: "[SpazioDati]"
+  example: "[\"SpazioDati\"]"
