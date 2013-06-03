@@ -13,23 +13,28 @@ datagems:
 
 acheneID:
   description: unique ID on dandelion
+  example: http://dandelion.eu/resource/42da83...
 
 category:
   subfields:
     acheneID:
       description: unique ID on dandelion of the category
       links_to: *places_taxonomy
+      example: http://dandelion.eu/resource/0f1f3e...
     label:
       description: name of the exact category the place is in
+      example: IT services
     pathAchenes:
       description:
         an array of acheneIDs, pointing to the full path of categories the place is in.
         The first acheneID will always be the root of the Places Taxonomy, the last will always be
         the same value of category.acheneID
       links_to: *places_taxonomy
+      example: "[http://dandelion.eu/resource/520910..., http://dandelion.eu/resource/f84072..., http://dandelion.eu/resource/0f1f3e...]"
     pathLabels:
       description:
         ad array of labels of the categories the place is in, as described in category.pathAchenes
+      example: "[Point of interest, Services and supplies, IT services]"
 
 name:
   description: the name of the place
@@ -41,8 +46,10 @@ country:
     acheneID:
       description: unique ID on dandelion of the country
       links_to: *eurogeo
+      example: http://dandelion.eu/resource/725732...
     name:
       description: name of the country
+      example: ITALIA
 
 macroregion:
   description: macroregion (eurogeo level 30) the place is in
@@ -50,8 +57,10 @@ macroregion:
     acheneID:
       description: unique ID on dandelion of the macroregion
       links_to: *eurogeo
+      example: http://dandelion.eu/resource/9cd739...
     name:
       description: name of the macroregion
+      example: NORD-EST
 
 region:
   description: region (eurogeo level 40) the place is in
@@ -59,8 +68,10 @@ region:
     acheneID:
       description: unique ID on dandelion of the region
       links_to: *eurogeo
+      example: http://dandelion.eu/resource/e55c97...
     name:
       description: name of the region
+      example: Trentino-Alto Adige/Südtirol
 
 province:
   description: province (eurogeo level 50) the place is in
@@ -68,8 +79,10 @@ province:
     acheneID:
       description: unique ID on dandelion of the province
       links_to: *eurogeo
+      example: http://dandelion.eu/resource/c675db...
     name:
       description: name of the province
+      example: Trento
 
 municipality:
   description: municipality (eurogeo level 60) the place is in
@@ -77,8 +90,10 @@ municipality:
     acheneID:
       description: unique ID on dandelion of the municipality
       links_to: *eurogeo
+      example: http://dandelion.eu/resource/05a192...
     name:
       description: name of the municipality
+      example: Trento
 
 locality:
   description: locality (eurogeo level 70) the place is in
@@ -86,11 +101,42 @@ locality:
     acheneID:
       description: unique ID on dandelion of the locality
       links_to: *eurogeo
+      example: http://dandelion.eu/resource/e9ea03...
     name:
       description: name of the locality
+      example: Trento
+
+address:
+  description: address of the place
+  example: Via del Brennero, 52
+
+postcode:
+  description: postcode of the place
+  example: 38122
+
+website:
+  description: website of the place
+  example: http://spaziodati.eu
+
+tel:
+  description: phone number of the place
+  example: null
+
+fax:
+  description: fax number of the place
+  example: null
+
+email:
+  description: email address of the place
+  example: "info@spaziodati.eu"
+
+description:
+  description: free text description of the place
+  example: "By leveraging Big Data & Semantic Web technologies, SpazioDati develops ..."
 
 geometry:
   description: lat/lon coordinates of the place
+  example: "{\"type\": \"Point\", \"coordinates\": [11.124032,46.076791]}"
 
 geomPoint:
   description: information about the quality of the geometry
@@ -99,9 +145,15 @@ geomPoint:
       description:
         tells whether the geometry has been geocoded or comes directly from a trusted source;
         see the <a href="#geometry-provenance">Geometry Provenance</a> table below
+      example: 1
     accuracy:
       description:
         quality of the geometry; this field is usually informative only when the geometry was
         geocoded, otherwise the quality is assumed to be maximum, trusting the source completely;
         the possible values are the same as the "level" field in the <a href="datagemsEurogeo.html">Eurogeo</a>
         dataset and extends it; see the <a href="#levels">Levels</a> table below
+      example: 100
+
+provenance:
+  description: list of strings, representing from where the place information has been taken
+  example: "[SpazioDati]"
