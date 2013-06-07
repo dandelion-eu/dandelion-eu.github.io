@@ -4,7 +4,7 @@ datagems:
     uri: /datagemsEurogeo.html
 
 acheneID:
-  example: http://dandelion.eu/resource/05a192...
+  example: http://dandelion.eu/resource/123456...
   description: unique ID on dandelion
 
 country:
@@ -14,7 +14,7 @@ country:
     than 20, this field stores information about the country this specific administrative region belongs
   subfields:
     acheneID:
-      example: http://dandelion.eu/resource/725732...
+      example: http://dandelion.eu/resource/123456...
       description: unique ID on dandelion of the country
       links_to: *eurogeo
     name:
@@ -28,7 +28,7 @@ macroregion:
     than 30, this field stores information about the macroregion this specific administrative region belongs
   subfields:
     acheneID:
-      example: http://dandelion.eu/resource/9cd739...
+      example: http://dandelion.eu/resource/123456...
       description: unique ID on dandelion of the macroregion
       links_to: *eurogeo
     name:
@@ -42,7 +42,7 @@ region:
     than 40, this field stores information about the region this specific administrative region belongs
   subfields:
     acheneID:
-      example: http://dandelion.eu/resource/e55c97...
+      example: http://dandelion.eu/resource/123456...
       description: unique ID on dandelion of the region
       links_to: *eurogeo
     name:
@@ -56,7 +56,7 @@ province:
     than 50, this field stores information about the province this specific administrative region belongs
   subfields:
     acheneID:
-      example: http://dandelion.eu/resource/c675db...
+      example: http://dandelion.eu/resource/123456...
       description: unique ID on dandelion of the province
       links_to: *eurogeo
     name:
@@ -70,12 +70,12 @@ municipality:
     than 60, this field stores information about the municipality this specific administrative region belongs
   subfields:
     acheneID:
-      example: http://dandelion.eu/resource/05a192...
+      example: http://dandelion.eu/resource/123456...
       description: unique ID on dandelion of the municipality
       links_to: *eurogeo
     name:
       description: name of the municipality
-      example: Trento
+      example: Ala
 
 locality:
   description:
@@ -83,32 +83,32 @@ locality:
     the other fields specify data related to this exact locality
   subfields:
     acheneID:
-      example: "null"
+      example: http://dandelion.eu/resource/123456...
       description: unique ID on dandelion of the locality
       links_to: *eurogeo
     name:
       description: name of the locality
-      example: "null"
+      example: Cumerlotti
 
 level:
   description: the level of this administrative region, as defined in the <a href="#levels">Levels</a> table below
-  example: 60
+  example: 70
 
 euroCode:
   description: official Eurostat code
-  example: "null"
+  example: IT236487
 
 localCode:
   description: "official government code, based on the country the administrative region belongs (for Italy: ISTAT)"
-  example: 022205
+  example: 022205159876241
 
 cadastralCode:
   description: official cadastral code, where available
-  example: L378
+  example: L378X485
 
 licensePlate:
   description: (only for level=50) official license plate
-  example: "null"
+  example: MR
 
 elevation:
   description: mean sea level in meters
@@ -118,10 +118,10 @@ population:
   subfields:
     2001:
       description: official population as in 2001
-      example: "null"
+      example: 198365
     2011:
       description: official population as in 2011
-      example: 114198
+      example: 212354
 
 isMountainMunicipality:
   description: (only for level=60) whether the administrative region is mountainous or not; see the <a href="#isMountainMunicipality">isMountainMunicipality Values</a> table below
@@ -154,8 +154,8 @@ geomPoint:
 
 alternateNames:
   description: a list of alternate names used sometimes when referring to this administrative region
-  example: "[\"Comune di Trento\"]"
+  example: "[\"Marani di Ala\"]"
 
 provenance:
   description: list of strings, representing from where the administrative region information has been taken
-  example: "[\"Geonames\",\"ISTAT\",\"SpazioDati Partner\"]"
+  example: "[\"Geonames\",\"ISTAT\",\"SpazioDati Partner\",\"Vogons\"]"
