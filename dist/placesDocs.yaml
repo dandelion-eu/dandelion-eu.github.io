@@ -13,14 +13,14 @@ datagems:
 
 acheneID:
   description: unique ID on dandelion
-  example: http://dandelion.eu/resource/42da83...
+  example: http://dandelion.eu/resource/123456...
 
 category:
   subfields:
     acheneID:
       description: unique ID on dandelion of the category
       links_to: *places_taxonomy
-      example: http://dandelion.eu/resource/0f1f3e...
+      example: http://dandelion.eu/resource/123456...
     label:
       description: name of the exact category the place belongs
       example: IT services
@@ -30,7 +30,7 @@ category:
         The first acheneID will always be the root of the Places Taxonomy, the last will always be
         the same value of category.acheneID
       links_to: *places_taxonomy
-      example: "[\"http://dandelion.eu/resource/520910...\", \"http://dandelion.eu/resource/f84072...\", \"http://dandelion.eu/resource/0f1f3e...\"]"
+      example: "[\"http://dandelion.eu/resource/123456...\", \"http://dandelion.eu/resource/123456...\", \"http://dandelion.eu/resource/123456...\"]"
     pathLabels:
       description:
         an array of labels of the categories the place belongs, as described in category.pathAchenes
@@ -46,7 +46,7 @@ country:
     acheneID:
       description: unique ID on dandelion of the country
       links_to: *eurogeo
-      example: http://dandelion.eu/resource/725732...
+      example: http://dandelion.eu/resource/123456...
     name:
       description: name of the country
       example: ITALIA
@@ -57,7 +57,7 @@ macroregion:
     acheneID:
       description: unique ID on dandelion of the macroregion
       links_to: *eurogeo
-      example: http://dandelion.eu/resource/9cd739...
+      example: http://dandelion.eu/resource/123456...
     name:
       description: name of the macroregion
       example: NORD-EST
@@ -68,7 +68,7 @@ region:
     acheneID:
       description: unique ID on dandelion of the region
       links_to: *eurogeo
-      example: http://dandelion.eu/resource/e55c97...
+      example: http://dandelion.eu/resource/123456...
     name:
       description: name of the region
       example: Trentino-Alto Adige/Südtirol
@@ -79,7 +79,7 @@ province:
     acheneID:
       description: unique ID on dandelion of the province
       links_to: *eurogeo
-      example: http://dandelion.eu/resource/c675db...
+      example: http://dandelion.eu/resource/123456...
     name:
       description: name of the province
       example: Trento
@@ -90,10 +90,10 @@ municipality:
     acheneID:
       description: unique ID on dandelion of the municipality
       links_to: *eurogeo
-      example: http://dandelion.eu/resource/05a192...
+      example: http://dandelion.eu/resource/123456...
     name:
       description: name of the municipality
-      example: Trento
+      example: Ala
 
 locality:
   description: locality (eurogeo level 70) the place belongs
@@ -101,42 +101,42 @@ locality:
     acheneID:
       description: unique ID on dandelion of the locality
       links_to: *eurogeo
-      example: http://dandelion.eu/resource/e9ea03...
+      example: http://dandelion.eu/resource/123456...
     name:
       description: name of the locality
-      example: Trento
+      example: Cumerlotti
 
 address:
   description: address of the place
-  example: Via del Brennero, 52
+  example: Via dei Pomari, 42
 
 postcode:
   description: postcode of the place
-  example: 38122
+  example: 09134
 
 website:
   description: website of the place
-  example: http://spaziodati.eu
+  example: http://example.com
 
 tel:
   description: phone number of the place
-  example: "null"
+  example: "+39 (012) 3456 789"
 
 fax:
   description: fax number of the place
-  example: "null"
+  example: "+39 (987) 6543 210"
 
 email:
   description: email address of the place
-  example: "info@spaziodati.eu"
+  example: "info@example.com"
 
 description:
   description: free text description of the place
-  example: "By leveraging Big Data & Semantic Web technologies, SpazioDati develops ..."
+  example: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et ante libero. Etiam in cursus turpis, sed mattis orci. Quisque sit amet consequat lacus"
 
 geometry:
   description: lat/lon coordinates of the place, compatible with the geojson definition
-  example: "{\"type\": \"Point\", \"coordinates\": [11.124032,46.076791]}"
+  example: "{\"type\": \"Point\", \"coordinates\": [10.903497,19.93229]}"
 
 geomPoint:
   description: information about the quality of the geometry
@@ -152,8 +152,8 @@ geomPoint:
         geocoded, otherwise the quality is assumed to be maximum, trusting the source completely;
         the possible values are the same as the "level" field in the <a href="datagemsEurogeo.html">Eurogeo</a>
         dataset and extends it; see the <a href="#levels">Levels</a> table below
-      example: 100
+      example: 90
 
 provenance:
   description: list of strings, representing from where the place information has been taken
-  example: "[\"SpazioDati\"]"
+  example: "[\"Vogons\"]"
