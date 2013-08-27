@@ -155,6 +155,16 @@
     - array_in
   featured: array_in
 
+- title: Find places in a category
+  description: We can't use category.acheneIDs for this query, because we would exclude places which belongs to
+               children categories. For example if we want Museums, we probably also want Art Museums. We can do
+               this using array_in() on category.parentsAchenes
+  url: datagem/places/data.api?$where=array_in(category.parentsAchenes, "http://dandelion.eu/resource/7fe52dd2bff3f29d6d673cc90aed83a9414bf1a3")
+  tags:
+    - where
+    - array_in
+  featured: array_in
+
 - title: Lookup municipalities by their alternate names (contains)
   description: Match municipalities (Administrative Regions level 4) searching an alternate name containing a specific string
   url: datagem/administrative-regions/data.api?level=4&$where=array_elem_contains(alternateNames, "San Felice")

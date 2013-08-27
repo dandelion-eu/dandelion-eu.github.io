@@ -17,24 +17,20 @@ acheneID:
 
 category:
   subfields:
-    acheneID:
-      description: unique ID on dandelion of the category
+    acheneIDs:
+      description: an array of the unique IDs of the categories the place belongs to
       links_to: *places_taxonomy
-      example: http://dandelion.eu/resource/123456...
-    label:
-      description: name of the exact category the place belongs
-      example: IT services
-    pathAchenes:
+      example: "[\"http://dandelion.eu/resource/123456...\", \"http://dandelion.eu/resource/123456...\"]"
+    labels:
+      description: name of the categories the place belongs to
+      example: "[\"IT services\", \"Amusement parks\"]"
+    parentsAchenes:
       description:
-        an array of acheneIDs, pointing to the full path of categories the place belongs.
-        The first acheneID will always be the root of the Places Taxonomy, the last will always be
-        the same value of category.acheneID
+        "an unsorted array of acheneIDs of the parents of every category the place belongs to. 
+        Includes achenes in category.acheneIDs .
+        Essential for searching places in a category, using the array_in() function"
       links_to: *places_taxonomy
       example: "[\"http://dandelion.eu/resource/123456...\", \"http://dandelion.eu/resource/123456...\", \"http://dandelion.eu/resource/123456...\"]"
-    pathLabels:
-      description:
-        an array of labels of the categories the place belongs, as described in category.pathAchenes
-      example: "[\"Point of interest\", \"Services and supplies\", \"IT services\"]"
 
 name:
   description: the name of the place
