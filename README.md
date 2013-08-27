@@ -3,6 +3,7 @@
 ## DEV
 
 * checkout this repo
+* git checkout develop
 * npm install
 * bower install
 * gem install zurb-foundation (you need [compass](http://compass-style.org/))
