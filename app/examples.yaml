@@ -180,3 +180,18 @@
     - where
     - array_elem_starts_with
   featured: array_elem_starts_with
+
+- title: Get points around the Trento Cathedral and their distance
+  description: Select the name and the distance of all the points within 10km from the Trento Cathedral (lon/lat 11.121511, 46.066933), as well as their distance from the cathedral in meters.
+  url: datagem/places/data.api?$select=acheneID, name, distance(11.121511, 46.066933)&$where=within_circle(11.121511, 46.066933, 10000)
+  tags:
+    - distance
+    - within_circle
+  featured: distance
+
+- title: Get the distance from three main cities
+  description: Select the name and the distance from Rome, Tokyo and Washington D.C. of the entities in the Places datagem
+  url: datagem/places/data.api?$select=acheneID, name, distance(12.5, 41.9) AS "d_rome", distance(139.6917, 35.689506) AS "d_tokyo", distance(-77.036667, 38.895111) AS "d_washington"
+  tags:
+    - distance
+    - within_circle
