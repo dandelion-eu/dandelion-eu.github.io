@@ -46,6 +46,10 @@ fieldFunctions:
     grammar: 'max(column: Field)'
     description: 'Aggregation function for extracting the maximum value (similar to <span class="monospaced">SQL MAX()</span>)'
 
+  - name: distance
+    grammar: 'distance(lon:Float, lat:Float)'
+    description: 'Field function that returns the distance from a given point, in meters. The input point must be specified in geographical coordinates (<a href="http://spatialreference.org/ref/epsg/4326/">WGS84 - EPSG projection code 4326</a>).'
+
 
 filterFunctions:
   - name: fulltext
