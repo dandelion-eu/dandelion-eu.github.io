@@ -1,0 +1,197 @@
+- title: Orders by the results of an aggregation function
+  description: Counts how many provinces are there in each country, order the elements by the count() result
+  url: datagem/administrative-regions/data.api?$select=country.name,count(distinct province.name) AS "count_province"&$group=country.name&$order=count_province
+  tags:
+    - select
+    - count
+    - distinct
+    - as
+    - group
+    - order
+  featured: count
+
+- title: Limit the results to 2 items
+  description: Limited query to the first two items
+  url: datagem/places/data.api?$where=province.name="Trento"&$limit=2
+  tags:
+    - where
+    - limit
+  featured: limit
+
+- title: Simple query for distinct values
+  description: Select all distinct couples formed by municipality and province
+  url: datagem/places/data.api?$select=municipality.name, province.name
+  tags:
+    - select
+    - distinct
+  featured: distinct
+
+- title: Query that selects two columns
+  description: Select all elements, for each one return only name and category
+  url: datagem/places/data.api?$select=name, category
+  tags:
+    - select
+  featured: select
+
+- title: Simple query with count
+  description: Counts how many elements are there in the dataset and sets the new column name to "total_count".
+  url: datagem/places/data.api?$select=count() AS "total_count"
+  tags:
+    - select
+    - count
+    - as
+  featured: as
+
+- title: Query that counts all distinct values on one column
+  description: Counts how many distinct municipalities are there
+  url: datagem/places/data.api?$select=count(distinct municipality.acheneID)
+  tags:
+    - select
+    - count
+    - distinct
+  featured: distinct
+
+- title: Query that uses grouping and an aggregation function
+  description: Counts how many elements are there in each municipality
+  url: datagem/places/data.api?$select=count(),municipality.name&$group=municipality.name
+  tags:
+    - select
+    - count
+    - group
+  featured: count
+
+- title: Select a specific entity using the Achene ID
+  description: All entities on dandelion are identified by a unique id called "acheneID"
+  url: datagem/places/data.api?acheneID="http://dandelion.eu/resource/686228a1d9abc9911a425abe8ea97209a4c715f8"
+  tags:
+    - where
+  featured: where
+
+- title: Simple query with filter on column
+  description: Search all places located in the province of Trento, from the Italian places datagem (note that the exact match must be provided)
+  url: datagem/places/data.api?$where=province.name="Trento"
+  shortUrl: datagem/places/data.api?province.name="Trento"
+  tags:
+    - where
+  featured: where
+
+- title: Query on composites
+  description: Search all places located in the municipality of Trento (filter on Trento acheneID), from the Italian places datagem, and returns only the place name and the municipality composite
+  url: datagem/places/data.api?municipality.acheneID="http://dandelion.eu/resource/3bcdfc4b96c1befba3a649982a248f77a64231ff"&$select=name,municipality
+  tags:
+    - select
+  featured: select
+
+- title: Query with two concatenated filters
+  description: Search for all places in the province of Trento, that contain "Teatro" in any of the columns
+  url: datagem/places/data.api?$where=province.name="Trento" AND fulltext("Teatro")
+  tags:
+    - fulltext
+    - where
+  featured: fulltext
+
+- title: Query that uses a fulltext search with two terms
+  description: Search for all places that contain the words "Hotel” and “Bolzano" (note that the fulltext search does not restrict the search to the exact string "Hotel Bolzano", but searches all columns for both words separately, chained in “and”)
+  url: datagem/places/data.api?$where=fulltext(%22Hotel%20Bolzano%22)
+  tags:
+    - where
+    - fulltext
+  featured: fulltext
+
+- title: Query limited to a particular area
+  description: Search for all places in the given area (approximately around the province of Trento), that contain both "Hotel" and "Bolzano" in any of the columns
+  url: datagem/places/data.api?$where=(fulltext("Hotel Bolzano") AND within_box(10.381,45.673,12.477,46.591))
+  tags:
+    - where
+    - fulltext
+    - within_box
+  featured: within_box
+
+- title: Query for entities within a given distance
+  description: Search for all municipalities located less than 5km from the given point
+  url: datagem/administrative-regions/data.api?$where=intersects_circle(11.066, 45.916, 5000) AND level="4"
+  tags:
+    - where
+    - intersects_circle
+  featured: intersects_circle
+
+- title: Query with substring
+  description: Search for all places that contain “Cafe'” in the column name
+  url: datagem/places/data.api?$where=contains(name, "Cafe'")
+  tags:
+    - where
+    - contains
+  featured: contains
+
+- title: Query with substring at the beginning
+  description: Search for all places with name that starts_with “Hotel”
+  url: datagem/places/data.api?$where=starts_with(name, "Hotel")
+  tags:
+    - where
+    - starts_with
+  featured: starts_with
+
+- title: Query for null values
+  description: Select all elements without fax
+  url: datagem/places/data.api?$where=fax=null
+  tags:
+    - where
+  featured: where
+
+- title: Order results by one column
+  description: Search for all places that contain "Pizzeria" in the name and are located in the province of Trento, order them by name (descending)
+  url: datagem/places/data.api?$where=province.name="Trento" and contains(name, "pizzeria")&$order=name DESC
+  tags:
+    - where
+    - contains
+    - order
+  featured: contains
+
+- title: Lookup municipalities by their alternate names (exact match)
+  description: Search for a municipality (Administrative Regions level 4) by an alternate name
+  url: datagem/administrative-regions/data.api?level=4&$where=array_in(alternateNames, "Senale")
+  tags:
+    - where
+    - array_in
+  featured: array_in
+
+- title: Find places in a category
+  description: We can't use category.acheneIDs for this query, because we would exclude places which belongs to
+               children categories. For example if we want Museums, we probably also want Art Museums. We can do
+               this using array_in() on category.parentsAchenes
+  url: datagem/places/data.api?$where=array_in(category.parentsAchenes, "http://dandelion.eu/resource/7fe52dd2bff3f29d6d673cc90aed83a9414bf1a3")
+  tags:
+    - where
+    - array_in
+  featured: array_in
+
+- title: Lookup municipalities by their alternate names (contains)
+  description: Match municipalities (Administrative Regions level 4) searching an alternate name containing a specific string
+  url: datagem/administrative-regions/data.api?level=4&$where=array_elem_contains(alternateNames, "San Felice")
+  tags:
+    - where
+    - array_elem_contains
+  featured: array_elem_contains
+
+- title: Lookup municipalities by their alternate names (starts with)
+  description: Match municipalities (Administrative Regions level 4) searching an alternate name starting with a specific string, very useful for building type-ahead functionalities
+  url: datagem/administrative-regions/data.api?level=4&$where=array_elem_starts_with(alternateNames, "Unsere Liebe Frau")
+  tags:
+    - where
+    - array_elem_starts_with
+  featured: array_elem_starts_with
+
+- title: Get points around the Trento Cathedral and their distance
+  description: Select the name and the distance of all the points within 10km from the Trento Cathedral (lon/lat 11.121511, 46.066933), as well as their distance from the cathedral in meters.
+  url: datagem/places/data.api?$select=acheneID, name, distance(11.121511, 46.066933)&$where=within_circle(11.121511, 46.066933, 10000)
+  tags:
+    - distance
+    - within_circle
+  featured: distance
+
+- title: Get the distance from three main cities
+  description: Select the name and the distance from Rome, Tokyo and Washington D.C. of the entities in the Places datagem
+  url: datagem/places/data.api?$select=acheneID, name, distance(12.5, 41.9) AS "d_rome", distance(139.6917, 35.689506) AS "d_tokyo", distance(-77.036667, 38.895111) AS "d_washington"
+  tags:
+    - distance
+    - within_circle

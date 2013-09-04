@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>dandelion docs</title>
+
+    <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="styles/82840433.main.css">
+    <link rel="stylesheet" href="styles/fontawesome.css">
+
+    <link rel="stylesheet" href="styles/gh-fork-ribbon.css">
+    <!--[if IE]>
+        <link rel="stylesheet" href="styles/gh-fork-ribbon.ie.css" />
+    <![endif]-->
+
+    <script src="scripts/vendor/e6903ff7.modernizr.js"></script>
+
+    <script type="text/template" id="api-section-template">
+        <% if (largeTitle) { %>
+        <div class="row">
+            <div class="large-6 columns"><h5 class="monospaced"><%= section %><a class="anchor" name="<%= fatherSection %>-<%= cleanSection %>" href="#<%= fatherSection %>-<%= cleanSection %>"></a></h5></div>
+        </div>
+        <% } %>
+        <div class="row">
+            <% if (!largeTitle) { %>
+            <div class="large-2 columns"><h5 class="monospaced"><%= section %><a class="anchor" name="<%= fatherSection %>-<%= cleanSection %>" href="#<%= fatherSection %>-<%= cleanSection %>"></a></h5></div>
+            <% } %>
+            <div class="large-10 <% if (largeTitle) { %>push-2 <% } %>columns">
+                <div class="row">
+                    <div class="large-12 columns">
+                        <pre class="panel grammar-panel"><%= grammar %></pre>
+                        <p>
+                            <%= description %>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <div class="example-alert hidden" data-example='<%= sectionTag %>'>
+                            <ul class="square"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr/>
+    </script>
+</head>
+<body>
+    <!-- header -->
+    <nav class="top-bar">
+        <ul class="title-area">
+            <!-- Title Area -->
+            <li class="name">
+                <h1>
+                    <a href="/">
+                        dandelion.eu documentation
+                    </a>
+                </h1>
+            </li>
+            <li class="toggle-topbar menu-icon hide-for-medium-up"><a href="#"><span>menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section hide-for-medium-up">
+            <!-- Right Nav Section -->
+            <ul class="right">
+                <li><a href="/dataAPIExamples.html">Examples</a></li>
+                <li><a href="#api-endpoint">Endpoint</a></li>
+                <li><a href="#output-format">Output format</a></li>
+                <li><a href="#case-sensitivity">Case sensitivity</a></li>
+                <li><a href="#parameters">Parameters</a></li>
+                <li><a href="#composites">Composites</a></li>
+                <li><a href="#field-functions">Field functions</a></li>
+                <li><a href="#filter-functions">Filter functions</a></li>
+                <li><a href="#response-code">Response code</a></li>
+                <li><a href="#limits">Limits</a></li>
+            </ul>
+        </section>
+    </nav>
+    <!-- end header -->
+
+    <!-- github ribbon -->
+    <div class="github-fork-ribbon-wrapper right hide-for-small">
+        <div class="github-fork-ribbon">
+            <a href="https://github.com/dandelion-eu/dandelion-eu.github.io/tree/develop">Improve this doc</a>
+        </div>
+    </div>
+    <!--<a class="hide-for-small" href="https://github.com/dandelion-eu/dandelion-eu.github.io/tree/develop"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>-->
+    <!-- end github ribbon -->
+
+    <div class="row">
+        <div class="large-12 columns">
+            <h1 class="docs header"><a href="/">Data API v1.0</a>
+                <a class="right" href="/dataAPIExamples.html"><small>examples</small></a>
+
+            </h1>
+
+            <h6 class="docs subheader hide-for-medium-up"> <a href="https://github.com/dandelion-eu/dandelion-eu.github.io/tree/develop">Fork me on GitHub</a></h6>
+        </div>
+        <hr>
+    </div>
+
+    <div id="doc-section" class="row">
+
+        <!-- Main Content Section -->
+        <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+        <div class="large-10 push-2 columns">
+
+            <ul class="breadcrumbs">
+                <li><a href="/">Home</a></li>
+                <li class="current"><a href="#">Data API</a></li>
+            </ul>
+
+            <div class="row">
+                <div class="small-12 columns">
+                    <p>
+                        The data can be queried programmatically through our API. Feel free to experiment the current features and report your user experience through our <a data-uv-forum-id="197822" data-uv-lightbox="classic_widget" data-uv-link-color="#007dbf" data-uv-mode="feedback" data-uv-primary-color="#262320" href="javascript:void(0)">Feedback system</a>.
+                        The awesome <a href="http://dev.socrata.com/consumers/getting-started">Socrata API</a> has been inspiring our design, so that there's an almost total compatibility between the two.
+                        Stay tuned - more functionality is on its way!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Endpoint section -->
+            <div class="row api-section">
+                <div class="small-12 columns">
+                    <h3 class="api-section-title">API endpoint<a class="anchor" name="api-endpoint" href="#api-endpoint"></a></h3>
+                    <pre class="panel">/api/&#8203;v1/&#8203;datagem/&#8203;{datagemId|datagemSlug}/&#8203;data.{outputFormat}</pre>
+                    <p>You can obtain the datagem ID by clicking on the "Get API" button on the datagem page.</p>
+                </div>
+            </div>
+            <!-- End of endpoint section -->
+
+
+            <!-- Output format section -->
+            <div class="row api-section">
+                <div class="small-12 columns">
+                    <h3 class="api-section-title">Output format<a class="anchor" name="output-format" href="#output-format"></a></h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Format</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="monospaced">json</td>
+                                <td>An array that contains N members according to the number of results retrieved by the query. In the response header you can find some useful information about itself, for example the number of results (<span class="monospaced">X-DL-Count</span>) and the dataset version (<span class="monospaced">X-DL-datagem-version</span>). Each member is a <span class="monospaced">JSON</span> object containing all key-values pairs corresponding to all columns present in the datagem</td>
+                            </tr>
+                            <tr>
+                                <td class="monospaced">api</td>
+                                <td>Pretty interface for using the API, the full response, comprehensive of headers, is displayed in a dedicated styled page</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- End of output format section -->
+
+            <!-- Case sensitivity section -->
+            <div class="row case-sensitivity-section">
+                <div class="small-12 columns">
+                    <h3 class="case-sensitivity-section-title">Case sensitivity<a class="anchor" name="case-sensitivity" href="#case-sensitivity"></a></h3>
+                    <p>It's simple: all the operations on strings are case insensitive. There's no difference between searching for "italy" or "Italy".</p>
+                </div>
+            </div>
+            <!-- End of case sensitivity -->
+
+            <!-- Parameters section -->
+            <!-- To edit this section content go to the dataAPI.yaml -->
+            <div class="row api-section">
+                <div class="large-12 columns" id="auto-parameters">
+                    <h3 class="api-section-title">Parameters<a class="anchor" name="parameters" href="#parameters"></a></h3>
+                </div>
+            </div>
+            <!-- End of parameters section -->
+
+            <!-- Composites section -->
+            <div class="row api-section">
+                <div class="large-12 columns">
+                    <h3 class="api-section-title">Composites<a class="anchor" name="composites" href="#composites"></a></h3>
+                    <p>Some datagem fields contain more than one value. For example in the Places datagem the municipality field contains both the name and the acheneID of the municipality. We call these fields <strong>composites</strong>. "municipality" is the <strong>composite root</strong>, while "name" and "acheneID" are called <strong>composite fields</strong>.</p>
+
+                    <p>You can access composite fields using dot notation: in the above example, you can filter on "municipality.name" and "municipality.acheneID" (but not on "municipality" itself).</p>
+
+                    <p>In $select, you can get the whole composite using the composite root, or just a field using dot notation.</p>
+                </div>
+            </div>
+            <!-- End of composites section -->
+
+            <!-- Field function section -->
+            <!-- To edit this section content go to the dataAPI.yaml -->
+            <div class="row api-section">
+                <div class="large-12 columns" id="auto-fieldFunctions">
+                    <h3 class="api-section-title">Field functions<a class="anchor" name="field-functions" href="#field-functions"></a></h3>
+                    <blockquote>Note that field functions produce new columns with their result. The column name is arbitrary set by the API but it is possible to set a custom name by using the <span class="monospaced">AS</span> keyword</blockquote>
+                </div>
+            </div>
+            <!-- End of field function section -->
+
+            <!-- Filter function section -->
+            <!-- To edit this section content go to the dataAPI.yaml -->
+            <div class="row api-section">
+                <div class="large-12 columns" id="auto-filterFunctions">
+                    <h3 class="api-section-title">Filter functions<a class="anchor" name="filter-functions" href="#filter-functions"></a></h3>
+                </div>
+            </div>
+            <!-- End of filter function section -->
+
+            <!-- Response section -->
+            <div class="row api-section">
+                <div class="large-12 columns">
+                    <h3 class="api-section-title">Response Code<a class="anchor" name="response-code" href="#response-code"></a></h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Code range</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>200 - 299</td>
+                                <td>The request was successful</td>
+                            </tr>
+                            <tr>
+                                <td>400 - 499</td>
+                                <td>The request failed because there was something wrong with the request</td>
+                            </tr>
+                            <tr>
+                                <td>500 - 599</td>
+                                <td>The request failed because there is a problem on the server. Our fault!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        All 4xx error codes are associated with a JSON response, that contains:
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>message</td>
+                                <td>a specific error message, that suggests the cause of the error</td>
+                            </tr>
+                            <tr>
+                                <td>code</td>
+                                <td>the internal error code that the API return</td>
+                            </tr>
+                            <tr>
+                                <td>data</td>
+                                <td>object with additional error information</td>
+                            </tr>
+                            <tr>
+                                <td>error</td>
+                                <td>"true"</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </p>
+                </div>
+            </div>
+            <!-- End of response section -->
+
+
+            <!-- Limits section -->
+            <div class="row api-section">
+                <div class="large-12 columns">
+                    <h3 class="api-section-title">Limits<a class="anchor" name="limits" href="#limits"></a></h3>
+                    <p>The V1 API have no specified requests limit. You are nonetheless invited to throttle your requests so that the service remains responsive for everyone. Anyway there’s a limit on the number of maximum elements that an API response can return, currently set to 100000. Please use pagination if you need to retrieve more elements.</p>
+                </div>
+            </div>
+            <!-- End of limits section -->
+
+        </div>
+
+        <!-- Nav Sidebar -->
+        <div class="large-2 pull-10 columns hide-for-small">
+            <!--<h6 class="docs show-for-medium-up"><a href="/dataAPIExamples.html" class="button expand" style="margin-bottom: 0">examples</a></h6>-->
+
+            <ul class="side-nav" style="padding-top:0">
+                <li><a href="/dataAPIExamples.html"><strong>Examples</strong></a></li>
+                <li class="divider"></li>
+                <li><a href="#api-endpoint">Endpoint</a></li>
+                <li><a href="#output-format">Output format</a></li>
+                <li><a href="#case-sensitivity">Case sensitivity</a></li>
+                <li><a href="#parameters">Parameters</a></li>
+                <li><a href="#composites">Composites</a></li>
+                <li><a href="#field-functions">Field functions</a></li>
+                <li><a href="#filter-functions">Filter functions</a></li>
+                <li><a href="#response-code">Response code</a></li>
+                <li><a href="#limits">Limits</a></li>
+                <li class="divider"></li>
+                <li><a href="https://github.com/dandelion-eu/dandelion-eu.github.io/blob/develop/app/index.html">Show on Github</a></li>
+                <li><a href="https://github.com/dandelion-eu/dandelion-eu.github.io/edit/develop/app/index.html">Edit on Github </a></li>
+            </ul>
+        </div>
+
+        </div>
+
+
+    <!-- Footer -->
+
+    <footer class="row">
+        <div class="large-12 columns">
+            <hr>
+            <div class="row">
+                <div class="large-12 columns text-center">
+                    <p>
+                    <span itemprop="brand" itemscope="" itemtype="http://schema.org/Organization">
+                        <a href="http://dandelion.eu"><span itemprop="name">dandelion</span>.eu</a>
+                        <link itemprop="email" href="mailto:hello@dandelion.eu">
+                    </span> by
+                    <span>
+                        <a href="http://spaziodati.eu/"><span itemprop="name">SpazioDati</span></a>
+                    </span>
+                    <span>
+                        C.F &amp; P.I: 02241890223
+                    </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--[if lt IE 8]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script src="scripts/ba7af852.libray.js"></script>
+
+    <script src="scripts/7f0d69af.index-main.js"></script>
+  <script>
+    $(document).foundation();
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-27344094-6', 'dandelion-eu.github.io');
+    ga('send', 'pageview');
+
+  </script>
+</body>
+</html>

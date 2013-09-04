@@ -1,0 +1,98 @@
+parameters:
+  - name: $select
+    grammar: '[DISTINCT] {field} [AS "string"] | {function}([DISTINCT] {field} | {value}, ...) [AS "string"], ...'
+    description: Only shows the specified column, or list of columns separated by comma. Distinct or <a href="#field-functions">field functions</a> can be used. It is also possible to rename columns with the <span class="monospaced">AS</span> keyword.
+
+  - name: $where
+    grammar: '{field} {binary_op} {value} | {field} {binary_op} {field} | {function}([{param1}, {param2}, ...])'
+    description: 'This allows to filter results on one or more columns in a <span class="monospaced">SQL-like</span> language. Allowed operators are &lt; (lower than), &gt; (greater than), = (equals), != (not equals), =&lt; (equals or lower than), =&gt; (equals or greater than). Filter conditions can be chained with <span class="monospaced">AND</span> and <span class="monospaced">OR</span> operators or negated using <span class="monospaced">NOT</span>. You can use also some <a href="#filter-functions">filter functions</a>.
+                                                 <blockquote>
+                                                     The special columns "category" in EuroGeo and POI datasets: they contain the label of the category assigned to each event or location, according to a <a href="http://dandelion.eu/datagem-info/categories/">taxonomy/classification</a> is inspired by Geonames, Schema.org and other sources
+                                                 </blockquote>'
+  - name: $group
+    grammar: '{field}[, {field}]*'
+    description: 'Allows to group rows that have common values. Useful in conjunction with <a href="#field-functions">aggregation functions</a>'
+
+  - name: $order
+    grammar: '{field} [DESC|ASC] [,{field} [DESC|ASC]]*'
+    description: 'Allows to order the results according to one or more columns, in ascending or descending lexicographical order'
+
+  - name: $limit
+    grammar: '{\d+}'
+    description: 'Restricts the output to the first N results. If the parameter is not set, the query will be restricted to 100 results.'
+
+  - name: $offset
+    grammar: '{\d+}'
+    description: 'Starts listing the results from the given index. Mostly used In combination with limit parameter, for pagination purposes.'
+
+fieldFunctions:
+  - name: count
+    grammar: 'count([column:Field])'
+    description: 'Aggregation function for counting (similar to <span class="monospaced">SQL COUNT()</span>). If no parameter is specified the operation is performed on all columns. It is possible to use <span class="monospaced">DISTINCT</span> to consider only different elements'
+
+  - name: sum
+    grammar: 'sum(column:Field)'
+    description: 'Aggregation function for summing (similar to <span class="monospaced">SQL SUM()</span>). It is possible to use <span class="monospaced">DISTINCT</span> to sum only distinct values. <em>Note: it works only for numeric values.</em>'
+
+  - name: avg
+    grammar: 'avg(column:Field)'
+    description: 'Aggregation function for calculating the average value (similar to <span class="monospaced">SQL AVG()</span>). It is possible to use <span class="monospaced">DISTINCT</span> to consider only distinct values. <em>Note: it works only for numeric values.</em>'
+
+  - name: min
+    grammar: 'min(column:Field)'
+    description: 'Aggregation function for extracting the minimum value (similar to <span class="monospaced">SQL MIN()</span>)'
+
+  - name: max
+    grammar: 'max(column: Field)'
+    description: 'Aggregation function for extracting the maximum value (similar to <span class="monospaced">SQL MAX()</span>)'
+
+  - name: distance
+    grammar: 'distance(lon:Float, lat:Float)'
+    description: 'Field function that returns the distance from a given point, in meters. The input point must be specified in geographical coordinates (<a href="http://spatialreference.org/ref/epsg/4326/">WGS84 - EPSG projection code 4326</a>).'
+
+
+filterFunctions:
+  - name: fulltext
+    grammar: 'fulltext(text:String)'
+    description: 'This function performs a full-text search on all columns of the datagem. Fulltext function can''t match substrings yet'
+
+  - name: within_box
+    grammar: 'within_box(min_lon:Float, min_lat:Float, max_lon:Float, max_lat:Float)'
+    description: 'It''s possible to restrict the search to a given area, called Bounding Box (in GIS terminology), in short "box". The coordinates of the corners of the bounding box have to be specified in geographical coordinates
+                  (<a href="http://spatialreference.org/ref/epsg/4326/">WGS84 - EPSG projection code 4326</a>) - the same format used worldwide by the GPS devices. The order of coordinates must be: "min longitude, min latitude,max longitude, max latitude, i.e. the coordinates of lower-left and upper-right corner.
+                  Entities are not returned if there is at least one point of its geometry that lies in the exterior of the given box.
+                  <em>Note: badly-formatted bounding box leads to an empty list of results.</em>'
+
+  - name: intersects_box
+    grammar: 'intersects_box(min_lon:Float, min_lat:Float, max_lon:Float, max_lat:Float)'
+    description: 'Similar to within_box but returns also entities with geometries that are even partially contained in the given box'
+
+  - name: within_circle
+    grammar: 'within_circle(center_lon:Float, center_lat:Float, radius_in_meters:Integer)'
+    description: 'Returns all the points within the given distance from the given point. Longitude and latitude have to be specified in geographical coordinates
+                  (<a href="http://spatialreference.org/ref/epsg/4326/">WGS84 - EPSG projection code 4326</a>) while the radius has to be specified in meters.
+                  Note that geometries that are not entirely contained in the circle are not returned.'
+
+  - name: intersects_circle
+    grammar: 'intersects_circle(center_lon:Float, center_lat:Float, radius_in_meters:Integer)'
+    description: 'Similar to within_circle but returns also entities with geometries that are even partially contained in the given circle'
+
+  - name: starts_with
+    grammar: 'starts_with(column:Field, pattern:String)'
+    description: 'This function matches all the rows where the given column starts with the given text'
+
+  - name: contains
+    grammar: 'contains(column:Field, pattern:String)'
+    description: 'This function matches all the rows where the given column contains the given text'
+
+  - name: array_in
+    grammar: 'array_in(column:Field, text:String)'
+    description: 'Searches for an exact match of a text in a column of type Array'
+
+  - name: array_elem_contains
+    grammar: 'array_elem_contains(column:Field, text:String)'
+    description: 'Searches in a column of type Array for an element that contains a specific text'
+
+  - name: array_elem_starts_with
+    grammar: 'array_elem_starts_with(column:Field, text:String)'
+    description: 'Searches in a column of type Array for an element that starts with a specific text'

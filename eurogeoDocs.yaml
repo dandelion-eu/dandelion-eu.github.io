@@ -1,0 +1,161 @@
+datagems:
+  eurogeo:  &eurogeo
+    label: Eurogeo
+    uri: /datagemsEurogeo.html
+
+acheneID:
+  example: http://dandelion.eu/resource/123456...
+  description: unique ID on dandelion
+
+country:
+  description:
+    administrative region of level 20; when the field "level" is exactly 20, all
+    the other fields specify data related to this exact country, when instead "level" is greater
+    than 20, this field stores information about the country this specific administrative region belongs
+  subfields:
+    acheneID:
+      example: http://dandelion.eu/resource/123456...
+      description: unique ID on dandelion of the country
+      links_to: *eurogeo
+    name:
+      description: name of the country
+      example: ITALIA
+
+macroregion:
+  description:
+    administrative region of level 30; when the field "level" is exactly 30, all
+    the other fields specify data related to this exact macroregion, when instead "level" is greater
+    than 30, this field stores information about the macroregion this specific administrative region belongs
+  subfields:
+    acheneID:
+      example: http://dandelion.eu/resource/123456...
+      description: unique ID on dandelion of the macroregion
+      links_to: *eurogeo
+    name:
+      description: name of the macroregion
+      example: NORD-EST
+
+region:
+  description:
+    administrative region of level 40; when the field "level" is exactly 40, all
+    the other fields specify data related to this exact region, when instead "level" is greater
+    than 40, this field stores information about the region this specific administrative region belongs
+  subfields:
+    acheneID:
+      example: http://dandelion.eu/resource/123456...
+      description: unique ID on dandelion of the region
+      links_to: *eurogeo
+    name:
+      description: name of the region
+      example: Trentino-Alto Adige/Südtirol
+
+province:
+  description:
+    administrative region of level 50; when the field "level" is exactly 50, all
+    the other fields specify data related to this exact province, when instead "level" is greater
+    than 50, this field stores information about the province this specific administrative region belongs
+  subfields:
+    acheneID:
+      example: http://dandelion.eu/resource/123456...
+      description: unique ID on dandelion of the province
+      links_to: *eurogeo
+    name:
+      description: name of the province
+      example: Trento
+
+municipality:
+  description:
+    administrative region of level 60; when the field "level" is exactly 60, all
+    the other fields specify data related to this exact municipality, when instead "level" is greater
+    than 60, this field stores information about the municipality this specific administrative region belongs
+  subfields:
+    acheneID:
+      example: http://dandelion.eu/resource/123456...
+      description: unique ID on dandelion of the municipality
+      links_to: *eurogeo
+    name:
+      description: name of the municipality
+      example: Ala
+
+locality:
+  description:
+    administrative region of level 70; when the field "level" is exactly 70, all
+    the other fields specify data related to this exact locality
+  subfields:
+    acheneID:
+      example: http://dandelion.eu/resource/123456...
+      description: unique ID on dandelion of the locality
+      links_to: *eurogeo
+    name:
+      description: name of the locality
+      example: Cumerlotti
+
+level:
+  description: the level of this administrative region, as defined in the <a href="#levels">Levels</a> table below
+  example: 70
+
+euroCode:
+  description: official Eurostat code
+  example: IT236487
+
+localCode:
+  description: "official government code, based on the country the administrative region belongs (for Italy: ISTAT)"
+  example: 022205159876241
+
+cadastralCode:
+  description: official cadastral code, where available
+  example: L378X485
+
+licensePlate:
+  description: (only for level=50) official license plate
+  example: MR
+
+elevation:
+  description: mean sea level in meters
+  example: 194
+
+population:
+  subfields:
+    2001:
+      description: official population as in 2001
+      example: 198365
+    2011:
+      description: official population as in 2011
+      example: 212354
+
+isMountainMunicipality:
+  description: (only for level=60) whether the administrative region is mountainous or not; see the <a href="#isMountainMunicipality">isMountainMunicipality Values</a> table below
+  example: T
+
+isCoastal:
+  description: (only for level=60) whether the administrative region is coastal or not
+  example: "false"
+
+isProvinceCheflieu:
+  description: (only for level=50) whether the provice is cheflieu or not
+  example: "true"
+
+geometry:
+  description: lat/lon coordinates of the administrative region, compatible with the geojson definition
+  example: "{\"type\": \"Point\",\"coordinates\": [11.12074,46.07043]}"
+
+geomPoint:
+  subfields:
+    provenance:
+      description:
+        tells whether the geometry has been geocoded or comes directly from a trusted source;
+        see the <a href="datagemsPlaces.html#geometry-provenance">Geometry Provenance</a> of the
+        <a href="datagemsPlaces.html">Geometry Places datagem</a>
+      example: 0
+    accuracy:
+      description:
+        quality of the geometry; see the <a href="datagemsEurogeo.html">Eurogeo</a> table below
+      example: 0
+
+alternateNames:
+  description: a list of alternate names used sometimes when referring to this administrative region
+  example: "[\"Marani di Ala\"]"
+
+provenance:
+  description: list of strings, representing from where the administrative region information has been taken
+  example: "[\"Geonames\",\"ISTAT\",\"SpazioDati Partner\",\"Vogons\"]"
